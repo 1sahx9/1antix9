@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ANTIX9 | Luxury Originals Matrix Suite</title>
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { background-color: #06090c; color: #ffffff; font-family: 'Rajdhani', sans-serif; background-image: radial-gradient(circle at center, #11161d 0%, #06090c 100%); }
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+        .stake-bg-card { background-color: #1e2936; }
+        .stake-bg-inner { background-color: #0b1116; }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
+        .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .btn-chrome-metallic:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(255, 255, 255, 0.25); }
+        .mine-tile { background-color: #2f3d4c; border: 1px solid rgba(255, 255, 255, 0.04); box-shadow: inset 0 2px 4px rgba(255,255,255,0.05); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .mine-tile:hover { background-color: #3d4f62; transform: scale(1.03); }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
+
+    <header class="w-full max-w-7xl mx-auto flex justify-between items-center border-b border-neutral-900 pb-4 mb-6">
+        <div>
+            <h1 class="text-2xl font-black font-cyber tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">1ANTIX9 PLATINUM GAMES</h1>
+            <p class="text-[9px] font-cyber text-neutral-500 uppercase mt-0.5">Sovereign Architecture Sandbox Node</p>
+        </div>
+        <a href="index.html" class="bg-neutral-900 border border-neutral-800 text-neutral-400 font-cyber text-[10px] uppercase tracking-wider px-4 py-2 rounded-lg hover:text-white transition">Back to Lobby</a>
+    </header>
+
+    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow items-stretch mb-6">
+        
+        <!-- COMPONENT 1: THE LUXURY 5x5 MINES MATRIX -->
+        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
+            <div>
+                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
+                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">💣 1ANTIX9 Mines Module</h3>
+                    <span id="mines-status-tag" class="text-[9px] bg-black/40 text-neutral-400 border border-neutral-800 px-2 py-0.5 rounded font-cyber uppercase">Staged</span>
+                </div>
+                
+                <!-- 5x5 Mines Physical Grid Slate Design -->
+                <div id="mines-grid-container" class="bg-[#0b1116] border border-neutral-900 rounded-xl p-3 grid grid-cols-5 gap-2 aspect-square w-full max-w-[280px] mx-auto">
+                    <!-- Javascript will dynamically deploy the 25 operational cards here -->
+                </div>
+            </div>
+            
+            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Configure & Rearm Board</button>
+        </div>
+
+        <!-- COMPONENT 2: AVIATOR FLIGHT CORE -->
+        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
+            <div>
+                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
+                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">🛫 1ANTIX9 Flight Vector</h3>
+                    <span id="aviator-status" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
+                </div>
+                <div class="bg-[#0b1116] border border-neutral-900 w-full h-44 rounded-xl flex items-center justify-center relative overflow-hidden">
+                    <span id="aviator-multiplier" class="text-5xl font-black font-cyber text-white z-10">1.00x</span>
+                </div>
+            </div>
+            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Initiate Flight Sequence</button>
+        </div>
+
+        <!-- COMPONENT 3: DICE SETTLEMENT MODULE -->
+        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
+            <div>
+                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
+                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">🎲 1ANTIX9 Dice Suite</h3>
+                    <span class="text-[9px] bg-black/40 text-neutral-400 border border-neutral-800 px-2 py-0.5 rounded font-cyber uppercase">RNG Active</span>
+                </div>
+                <div class="bg-[#0b1116] border border-neutral-900 w-full h-32 rounded-xl flex items-center justify-center relative mb-4">
+                    <div id="dice-result-box" class="text-4xl font-black font-cyber text-white">50.00</div>
+                </div>
+                <input type="range" min="2" max="98" value="50" class="w-full accent-white bg-neutral-800 rounded-lg appearance-none h-1.5" id="dice-slider">
+            </div>
+            <button id="btn-roll-dice" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Roll Matrix Dice</button>
+        </div>
+
+    </main>
+
+    <footer class="w-full max-w-7xl mx-auto border-t border-neutral-900 pt-4 text-center text-xs text-neutral-600 font-mono">
+        1ANTIX9 Multiverse Infrastructure Platform &bull; Secured Operational State Logs Active
+    </footer>
+
+    <script>
+        // 1. MINES GAME INTERACTION LOGIC
+        const grid = document.getElementById('mines-grid-container');
+        const minesStatus = document.getElementById('mines-status-tag');
+        let minePositions = [];
+        let gameActive = true;
+
+        function buildMinesBoard() {
+            grid.innerHTML = '';
+            minePositions = [];
+            gameActive = true;
+            minesStatus.innerText = "BOARD SECURED";
+            minesStatus.className = "text-[9px] text-emerald-400 font-cyber font-bold uppercase tracking-wider";
+
+            // Generating 4 hidden bomb index layers completely at random parameters
+            while(minePositions.length < 4) {
+                let r = Math.floor(Math.random() * 25);
+                if(!minePositions.includes(r)) minePositions.push(r);
+            }
+
+            for(let i=0; i<25; i++) {
+                const tile = document.createElement('button');
+                tile.className = "mine-tile rounded-lg aspect-square text-xs font-bold transition-all duration-150";
+                tile.dataset.index = i;
+                
+                tile.addEventListener('click', () => {
+                    if(!gameActive) return;
+                    const idx = parseInt(tile.dataset.index);
+
+                    if(minePositions.includes(idx)) {
+                        // Explode Event Rule
+                        tile.innerHTML = "💥";
+                        tile.className = "bg-red-950 border border-red-800 rounded-lg aspect-square flex items-center justify-center scale-95 transition-all";
+                        minesStatus.innerText = "MINE DETONATED";
+                        minesStatus.className = "text-[9px] text-red-500 font-cyber font-bold tracking-wider";
+                        gameActive = false;
+                        revealAllMines();
+                    } else {
+                        // Success Event Rule
+                        tile.innerHTML = "💎";
+                        tile.className = "bg-neutral-950 border border-emerald-500/40 text-emerald-400 rounded-lg aspect-square flex items-center justify-center scale-95 transition-all";
+                    }
+                });
+                grid.appendChild(tile);
+            }
+        }
+
+        function revealAllMines() {
+            const tiles = grid.children;
+            minePositions.forEach(idx => {
+                tiles[idx].innerHTML = "💥";
+                tiles[idx].className = "bg-red-950 border border-red-700 rounded-lg aspect-square flex items-center justify-center";
+            });
+        }
+
+        document.getElementById('btn-reset-mines').addEventListener('click', buildMinesBoard);
+        buildMinesBoard(); // Initialize first runtime sequence parameters
+
+        // 2. AVIATOR CORE LOGIC RUNNER
+        let avInterval = null;
+        document.getElementById('btn-aviator-action').addEventListener('click', () => {
+            if (avInterval) clearInterval(avInterval);
+            let count = 1.00;
+            document.getElementById('aviator-status').innerText = "FLYING VECTOR";
+            document.getElementById('aviator-status').className = "text-[9px] text-yellow-400 font-cyber font-bold tracking-wider animate-pulse";
+            
+            avInterval = setInterval(() => {
+                count += (Math.random() * 0.15);
+                document.getElementById('aviator-multiplier').innerText = count.toFixed(2) + "x";
+
+                if (Math.random() < 0.08) {
+                    clearInterval(avInterval);
