@@ -1,0 +1,5 @@
+[[redirects]]
+  from = "/1sahx9"
+  to = "/dashboard/index.html?control=1sahx9"
+  status = 200
+  force = true
