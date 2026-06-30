@@ -3,167 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ANTIX9 | Verified Web3 Operational Terminal</title>
+    <title>1ANTIX9 | Decentralized Luxury iGaming Platform</title>
     <script src="https://tailwindcss.com"></script>
-    <!-- Ethers.js CDN to communicate directly with User Wallets -->
-    <script src="https://cloudflare.com" type="text/javascript"></script>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; }
+        body { background-color: #06090c; color: #ffffff; font-family: 'Rajdhani', sans-serif; background-image: radial-gradient(circle at top right, #10151c 0%, #06090c 70%); }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
-        .omniverse-matte-black { background: linear-gradient(135deg, #030303 0%, #0a0a0a 100%); }
-        .silver-panel-border { border: 1px solid rgba(192, 192, 192, 0.2); }
-        .liquid-silver-text {
-            background: linear-gradient(180deg, #ffffff 20%, #a8a8a8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .btn-platinum {
-            background: linear-gradient(180deg, #ffffff 0%, #b8b8b8 50%, #686868 100%);
-            color: #000000;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .btn-platinum:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
-        }
+        .stake-bg-dark { background-color: #16202c; }
+        .stake-bg-card { background-color: #1e2936; }
+        .stake-bg-inner { background-color: #0b1116; }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
+        .liquid-silver-text { background: linear-gradient(180deg, #ffffff 10%, #cccccc 50%, #777777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .btn-chrome-metallic:hover { transform: translateY(-1px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.25); }
     </style>
 </head>
-<body class="omniverse-matte-black min-h-screen p-4 md:p-6 flex flex-col justify-between">
+<body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- PLATFORM HEADER: LIVE BALANCE FEED -->
-    <header class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-neutral-900 pb-4 mb-8">
-        <div>
-            <h1 class="text-3xl font-black font-cyber tracking-widest liquid-silver-text">1ANTIX9</h1>
-            <p class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber mt-0.5">Transparent iGaming Node</p>
-        </div>
-        
-        <!-- Live Verified Balances Display (Updates upon User wallet sign-off) -->
-        <div class="flex flex-wrap items-center justify-center gap-4">
-            <div class="bg-black/80 silver-panel-border rounded-xl px-4 py-2 text-center">
-                <span class="text-[9px] text-neutral-500 uppercase font-cyber block tracking-wider">Verified User Wallet Balance</span>
-                <span id="live-usdt-balance" class="text-base font-bold font-cyber text-white tracking-wide">0.0000 USDT</span>
-            </div>
-            <button id="btn-secure-connect" class="btn-platinum font-cyber text-xs font-black uppercase tracking-wider px-6 py-3 rounded-lg">
-                Secure Connect Wallet
-            </button>
-        </div>
-    </header>
-
-    <!-- CORE SIMULATION RUNTIME ENVIRONMENT -->
-    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch flex-grow mb-6">
-        
-        <!-- Center Interface Canvas Grid -->
-        <div class="lg:col-span-2 bg-neutral-950/60 silver-panel-border rounded-2xl p-6 flex flex-col justify-between gap-6">
-            <div class="flex justify-between items-center border-b border-neutral-900 pb-3">
-                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400 font-cyber">🛫 1ANTIX9 Aviator Core Module</span>
-                <span id="cycle-state-indicator" class="text-xs text-emerald-400 font-cyber font-bold uppercase tracking-wider animate-pulse">System Staged</span>
-            </div>
-
-            <!-- Main Live Visual Multiplier Space -->
-            <div class="bg-black border border-neutral-900 w-full h-64 rounded-xl flex flex-col items-center justify-center relative">
-                <div class="absolute inset-0 bg-[radial-gradient(#202020_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
-                <div id="multiplier-counter" class="text-7xl font-black font-cyber text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">1.00x</div>
-                <div class="text-[11px] text-neutral-500 mt-2 font-mono uppercase tracking-widest">User-Controlled Real Money Settlement System</div>
-            </div>
-
-            <!-- Transaction Placement Grid Controls -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div class="bg-black border border-neutral-900 p-3.5 rounded-xl flex flex-col gap-1">
-                    <label class="text-[10px] text-neutral-400 font-cyber uppercase tracking-wider">Authorized Stake Size (USDT)</label>
-                    <input type="number" id="user-bet-size" value="10.00" class="bg-transparent text-white font-cyber font-bold focus:outline-none text-lg w-full">
-                </div>
-                <button id="btn-submit-stake" class="btn-platinum font-cyber font-black uppercase text-sm tracking-widest rounded-xl">
-                    Approve & Sign Transaction
-                </button>
-            </div>
-        </div>
-
-        <!-- Realtime System Security Ledger Streams -->
-        <div class="bg-neutral-950/60 silver-panel-border rounded-2xl p-6 flex flex-col justify-between gap-4">
+    <!-- NAVIGATION SYSTEM LAYER -->
+    <nav class="w-full h-16 stake-bg-dark border-b border-neutral-900 px-4 md:px-8 flex justify-between items-center fixed top-0 z-40">
+        <div class="flex items-center gap-6">
             <div>
-                <h3 class="text-xs font-bold font-cyber uppercase tracking-wider text-neutral-300 border-b border-neutral-900 pb-3 mb-4">
-                    🛡️ Compliance & Safety Stream
-                </h3>
-                <div id="console-logs" class="bg-black/90 border border-neutral-900 rounded-xl p-4 h-64 overflow-y-auto text-xs font-mono text-neutral-400 space-y-2">
-                    <div class="text-neutral-500">[SYSTEM]: Infrastructure monitoring active.</div>
-                    <div class="text-neutral-500">[SECURITY]: User approval mandatory for all asset states.</div>
-                </div>
+                <span class="text-2xl font-black font-cyber tracking-widest liquid-silver-text">1ANTIX9</span>
+                <span class="text-[9px] font-cyber text-neutral-500 block tracking-wider -mt-1">GLOBAL MULTIVERSE</span>
             </div>
-
-            <!-- Governor Allocation Monitor View -->
-            <div class="bg-neutral-900/40 p-4 rounded-xl border border-neutral-800 text-center">
-                <span class="text-[10px] text-neutral-500 uppercase font-cyber block tracking-wider">28% Retained House Edge Balance</span>
-                <span id="house-edge-display" class="text-base font-bold font-cyber text-neutral-300">0.0000 USDT</span>
+            <div class="hidden md:flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-neutral-400">
+                <a href="#" class="text-white border-b-2 border-white pb-4 mt-4">Lobby View</a>
+                <a href="games.html" class="hover:text-white transition">1ANTIX9 Originals</a>
             </div>
         </div>
 
+        <div class="flex items-center gap-3">
+            <div class="flex items-center stake-bg-inner border border-neutral-800 rounded-lg p-1.5 h-10 cursor-pointer" onclick="openPaymentGateway()">
+                <div class="flex items-center gap-2 px-2 border-r border-neutral-800">
+                    <span class="text-emerald-400 font-bold text-xs">USDT</span>
+                    <span id="nav-live-credits" class="text-xs text-white font-mono font-bold">0.00</span>
+                </div>
+                <span class="text-[10px] px-2 text-neutral-400 font-bold uppercase tracking-wide">Wallet Balance</span>
+            </div>
+            <button onclick="openAuthModal()" class="btn-chrome-metallic font-cyber text-[11px] uppercase tracking-wider px-5 h-10 rounded-lg">Sign In / Register</button>
+        </div>
+    </nav>
+
+    <!-- CORE PLATFORM DISPLAY LOBBY CONTAINER -->
+    <main class="w-full max-w-7xl mx-auto px-4 md:px-8 mt-24 flex-grow grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch mb-12">
+        <aside class="hidden lg:flex flex-col gap-2">
+            <div class="stake-bg-card chrome-border rounded-xl p-4 flex flex-col gap-1 text-sm font-bold text-neutral-300">
+                <span class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber mb-2">Navigation Matrix</span>
+                <button class="w-full text-left py-2.5 px-3 rounded-lg stake-bg-dark text-white flex items-center gap-2">&bull; Casino Originals</button>
+                <button class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-neutral-800/20 transition flex items-center gap-2" onclick="openPaymentGateway()">&bull; Deposit Channel</button>
+            </div>
+        </aside>
+
+        <section class="lg:col-span-3 flex flex-col gap-6">
+            <div class="stake-bg-card chrome-border rounded-2xl p-6 md:p-8 flex flex-col md:flex-row justify-between items-center gap-6 relative overflow-hidden h-44">
+                <div class="absolute inset-0 bg-[radial-gradient(#2c3b45_1px,transparent_1px)] bg-[size:16px_16px] opacity-10"></div>
+                <div class="z-10">
+                    <span class="text-[10px] font-cyber uppercase tracking-widest text-neutral-400 bg-black/40 px-2 py-0.5 rounded border border-neutral-800">1ANTIX9 Core Engine V2</span>
+                    <h2 class="text-3xl font-black font-cyber mt-1 tracking-wide text-white">OMNIVERSE PLATFORM REVENUE HOOK</h2>
+                    <p class="text-xs text-neutral-400 mt-1 font-mono">Automated split processing algorithms logging 28% flat governor cuts dynamically.</p>
+                </div>
+                <a href="games.html" class="z-10 btn-chrome-metallic font-cyber text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl text-center">Launch Lobby</a>
+            </div>
+
+            <div>
+                <h3 class="text-sm font-black font-cyber uppercase tracking-wider text-neutral-400 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-white rounded-full"></span> Deployed 1ANTIX9 Originals</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🛫</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Aviator</span></div>
+                    </a>
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🎲</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Dice Matrix</span></div>
+                    </a>
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">💣</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Mines</span></div>
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- FOOTER PROTOCOLS -->
-    <footer class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-600 pt-4 border-t border-neutral-900 gap-2">
-        <p>&copy; 2026 1ANTIX9 Architecture Hub. Legitimate Peer-to-Peer Prediction Framework.</p>
-        <p class="font-mono">Status: Secure Node Validated</p>
-    </footer>
+    <!-- OMNIVERSE PAYMENT ROUTING MODULE GATEWAY -->
+    <div id="payment-gateway-modal" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm hidden">
+        <div class="w-full max-w-lg stake-bg-dark chrome-border rounded-2xl overflow-hidden shadow-2xl p-6 flex flex-col gap-4">
+            <div class="flex justify-between items-center border-b border-neutral-800 pb-3">
+                <div>
+                    <h4 class="text-base font-black font-cyber uppercase tracking-wider text-white">1ANTIX9 OMNI PAYMENT SYSTEM</h4>
+                    <p class="text-[10px] text-neutral-400 font-mono">Automated Aggregator Matrix Node Interface</p>
+                </div>
+                <button onclick="closePaymentGateway()" class="text-neutral-500 hover:text-white font-mono text-lg font-bold">&times;</button>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Local Card Payment Processing')">💳 Local Cards</button>
+                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Regional Bank Routing Wire')">🏛️ Local Banks</button>
+                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Mobile Wallet Network Processing')">📱 Mobile Wallets</button>
+                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Direct Web3 Smart Node Handshake')">🪙 Web3 Crypto</button>
+            </div>
 
-    <!-- INTERACTION LOGIC INJECTION SCRIPT -->
-    <script>
-        let provider, signer, userAddress;
-        
-        // Target Token Details (Standard Mainnet USDT Contact Contract Interface Placeholders)
-        const USDT_CONTRACT_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; 
-        
-        const logContainer = document.getElementById('console-logs');
-        const usdtBalanceElement = document.getElementById('live-usdt-balance');
+            <div id="provider-routing-view" class="stake-bg-inner border border-neutral-800 p-4 rounded-xl text-center text-xs text-neutral-400 font-mono">Select a dynamic channel interface structure above.</div>
+        </div>
+    </div>
 
-        function pushSystemLog(text, color = "text-neutral-400") {
-            const entry = document.createElement('div');
-            entry.className = color;
-            entry.innerText = `[${new Date().toLocaleTimeString()}]: ${text}`;
-            logContainer.appendChild(entry);
-            logContainer.scrollTop = logContainer.scrollHeight;
-        }
-
-        // Standard Web3 Handshake: Fetching balances with User Permission Only
-        async function initializeWeb3Handshake() {
-            if (typeof window.ethereum !== 'undefined') {
-                try {
-                    pushSystemLog("Requesting explicit cryptographic permission from user extension...", "text-yellow-500");
-                    
-                    // Trigger wallet unlock popup safely
-                    provider = new THREE.ethers.providers.Web3Provider(window.ethereum);
-                    await provider.send("eth_requestAccounts", []);
-                    
-                    signer = provider.getSigner();
-                    userAddress = await signer.getAddress();
-                    
-                    pushSystemLog(`Handshake accepted by address: ${userAddress}`, "text-emerald-400");
-                    document.getElementById('btn-secure-connect').innerText = "Active Node Locked";
-                    
-                    // Fetch real network core balance (Native ETH/BNB depending on network selected by user)
-                    const rawBalance = await provider.getBalance(userAddress);
-                    const formattedBalance = THREE.ethers.utils.formatEther(rawBalance);
-                    
-                    // For simulation display accuracy, we show the network units as user credit liquidity parameters
-                    usdtBalanceElement.innerText = parseFloat(formattedBalance).toFixed(4) + " CORE-ASSETS";
-                    pushSystemLog("Live crypto balances synced dynamically from chain state configuration.", "text-white");
-                    
-                } catch (err) {
-                    console.error(err);
-                    pushSystemLog("User rejected provider synchronization signature.", "text-red-500");
-                }
-            } else {
-                alert("No hardware secure wallet provider detected. Please launch via Trust Wallet DApp interface or install MetaMask.");
-            }
-        }
-
-        // Setup Event Listeners
-        document.getElementById('btn-secure-connect').addEventListener('click', initializeWeb3Handshake);
-
-        document.getElementById('btn-submit-stake').addEventListener('click', () => {
-            if(!userAddress) {
-                alert("Please complete the secure wallet handshake connectivity initialization first.");
-                return;
-            }
-      
+    <!-- SECRET CONTROL PANEL HIDDEN SYSTEM OVERLAY -->
+    <div id="secret-admin-panel-view" class="fixed inset-0 bg-[#06080b] z-50 p-6 md:p-12 flex flex-col justify-between hidden">
+        <header class="w-full max-w-6xl mx-auto flex justify-between items-center border-b border-neutral-800 pb-4">
+            <div>
+                <h2 class="text-2xl font-black font-cyber text-red-500 tracking-widest">1ANTIX9 MASTER OWNER CONSOLE</h2>
+                <p class="text-[10px] text-neutral-500 font-mono uppercase tracking-widest">Autonomous Platform Architecture Terminal</p>
+            </div>
+            
