@@ -3,177 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ANTIX9 | OMNIVERSE SECURE AUTH MATRIX</title>
+    <title>1ANTIX9 | OMNIVERSE LUXURY AUTH CONTROL</title>
+    <!-- Google Fonts for Ultra High-End Professional UI Visuals -->
     <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Supabase Client Core SDK Data Stream Drivers Integration -->
     <script src="https://jsdelivr.net"></script>
+    <!-- Three.js Visual WebGL Engine Library for Luxury Futuristic 3D Floating Mesh Particles Grid -->
+    <script src="https://cloudflare.com"></script>
     <style>
         :root {
             --neon-glow: #ff0055;
-            --cyber-dark: #030305;
+            --cyber-dark: #000000;
             --luxury-blue: #00f0ff;
-            --silver-metal: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
-            --metallic-border: linear-gradient(135deg, #535c68 0%, #30336b 100%);
+            --silver-platinum: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+            --metallic-border: linear-gradient(135deg, #7f8c8d 0%, #34495e 50%, #111116 100%);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
         body {
             background-color: var(--cyber-dark);
             color: #ffffff;
             font-family: 'Rajdhani', sans-serif;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 15px;
+            height: 100vh;
+            position: relative;
         }
-        .auth-container {
-            width: 100%;
-            max-width: 440px;
-            background: rgba(10, 10, 15, 0.85);
-            border: 2px solid #222235;
-            border-image: linear-gradient(to bottom, #718093, #2f3640) 1;
-            border-radius: 4px;
-            padding: 25px;
-            box-shadow: 0 0 40px rgba(0, 240, 255, 0.08);
-            backdrop-filter: blur(15px);
+        /* Holographic 3D Mesh Animation Background Viewport Layer */
+        #hologram-3d-viewport {
+            position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1;
         }
-        .portal-title {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 900;
-            font-size: 1.4rem;
-            text-align: center;
-            margin-bottom: 25px;
-            letter-spacing: 2px;
-            background: linear-gradient(180deg, #fff 0%, #888 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 10px rgba(255,255,255,0.1);
+        .luxury-panel-wrapper {
+            width: 100%; max-width: 430px; background: rgba(5, 5, 8, 0.92);
+            border: 3px solid #bdc3c7; border-image: var(--metallic-border) 1;
+            padding: 30px 25px; position: relative; z-index: 10;
+            box-shadow: 0 0 50px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
         }
-        .auth-row-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
+        .portal-brand-title {
+            font-family: 'Orbitron', sans-serif; font-weight: 900; font-size: 1.5rem;
+            text-align: center; margin-bottom: 25px; letter-spacing: 3px;
+            background: linear-gradient(180deg, #ffffff 0%, #a6b1b9 100%);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
         }
-        .auth-row-card {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 15px;
-            border-radius: 8px;
+        .auth-rows-container { display: flex; flex-direction: column; gap: 20px; }
+        .auth-module-row {
+            background: rgba(255, 255, 255, 0.01); border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 15px; border-radius: 6px; box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
         }
-        .row-header {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 900;
-            color: var(--luxury-blue);
-            margin-bottom: 10px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
+        .module-row-header {
+            font-family: 'Orbitron', sans-serif; font-size: 0.85rem; font-weight: 900;
+            color: var(--luxury-blue); margin-bottom: 12px; letter-spacing: 1.5px;
+            text-transform: uppercase; text-shadow: 0 0 8px rgba(0, 240, 255, 0.3);
         }
-        .input-inline-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 10px;
+        /* Vertical Matrix Stack Input Structural Configuration Elements */
+        .vertical-inputs-stack { display: flex; flex-direction: column; gap: 10px; margin-bottom: 12px; }
+        .luxury-field-input {
+            width: 100%; padding: 12px 15px; background: #000000;
+            border: 1px solid #1c242c; border-radius: 4px; color: #ffffff;
+            font-family: 'Rajdhani', sans-serif; font-size: 1.05rem; letter-spacing: 0.5px;
         }
-        .auth-input {
-            flex: 1;
-            padding: 10px;
-            background: #08080c;
-            border: 1px solid #1e272e;
-            border-radius: 6px;
-            color: #fff;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1rem;
+        .luxury-field-input:focus { border-color: var(--luxury-blue); outline: none; box-shadow: 0 0 8px rgba(0,240,255,0.2); }
+        .control-split-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .gate-control-btn {
+            padding: 13px; border: none; border-radius: 4px; font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem; font-weight: 900; cursor: pointer; text-transform: uppercase;
+            transition: all 0.15s ease;
         }
-        .auth-input:focus { border-color: var(--luxury-blue); outline: none; }
-        .action-split-panel {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8px;
+        .gate-control-btn.create-btn-luxury {
+            background: var(--silver-platinum); color: #000000;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.08);
         }
-        .gate-btn {
-            padding: 11px;
-            border: none;
-            border-radius: 6px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            font-weight: 900;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: all 0.2s ease;
+        .gate-control-btn.login-btn-luxury {
+            background: transparent; border: 1px solid rgba(255, 255, 255, 0.15); color: #ffffff;
         }
-        .gate-btn.create-btn {
-            background: var(--silver-metal);
-            color: #000;
-            box-shadow: 0 3px 10px rgba(255,255,255,0.1);
-        }
-        .gate-btn.login-btn {
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #fff;
-        }
-        .gate-btn:active { transform: scale(0.97); }
-        .google-bypass-btn {
-            width: 100%;
-            background: #ffffff;
-            color: #000;
-            padding: 14px;
-            border-radius: 8px;
-            font-family: 'Orbitron', sans-serif;
-            font-size: 0.9rem;
-            font-weight: 900;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+        .gate-control-btn:active { transform: scale(0.96); }
+        .google-bypass-elite-btn {
+            width: 100%; background: #ffffff; color: #000000; padding: 15px;
+            border-radius: 6px; font-family: 'Orbitron', sans-serif; font-size: 0.95rem;
+            font-weight: 900; border: none; cursor: pointer; display: flex;
+            align-items: center; justify-content: center; gap: 12px;
+            box-shadow: 0 4px 20px rgba(255,255,255,0.12);
         }
     </style>
 </head>
 <body>
 
-    <div class="auth-container">
-        <div class="portal-title">1ANTIX9 CONTROL NODE</div>
+    <!-- Holographic Pure 3D Matrix Rendering Engine Background Space -->
+    <div id="hologram-3d-viewport"></div>
+
+    <div class="luxury-panel-wrapper">
+        <div class="portal-brand-title">1ANTIX9 OMNIVERSE CORE</div>
         
-        <div class="auth-row-grid">
-            <!-- Row 1: Google Elite Bypass -->
-            <button class="google-bypass-btn" id="googleBypass">
-                <svg style="width:16px;height:16px;" viewBox="0 0 24 24"><path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.113-5.121 4.113-3.415 0-6.191-2.776-6.191-6.191s2.776-6.191 6.191-6.191c1.554 0 2.977.577 4.073 1.527l3.053-3.053C19.345 2.1 16.035 1 12.24 1 6.033 1 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 11.24-4.54 11.24-11.24 0-.766-.085-1.489-.24-2.195H12.24z"/></svg>
-                Continue with Google
+        <div class="auth-rows-container">
+            <!-- Row 1: Google Elite Single Sign Bypass Platform -->
+            <button class="google-bypass-elite-btn" id="googleBypass">
+                <svg style="width:18px;height:18px;" viewBox="0 0 24 24"><path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.113-5.121 4.113-3.415 0-6.191-2.776-6.191-6.191s2.776-6.191 6.191-6.191c1.554 0 2.977.577 4.073 1.527l3.053-3.053C19.345 2.1 16.035 1 12.24 1 6.033 1 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 11.24-4.54 11.24-11.24 0-.766-.085-1.489-.24-2.195H12.24z"/></svg>
+                Continue with Google Account
             </button>
 
-            <!-- Row 2: Web3 Wallet Row -->
-            <div class="auth-row-card">
-                <div class="row-header">💳 Web3 Wallet Gateway</div>
-                <div class="action-split-panel">
-                    <button class="gate-btn login-btn" onclick="triggerAuthAction('Wallet Login')">Login</button>
-                    <button class="gate-btn create-btn" onclick="triggerAuthAction('Wallet Create')">Create</button>
+            <!-- Row 2: Web3 Wallet Row Framework -->
+            <div class="auth-module-row">
+                <div class="module-row-header">💳 Web3 Wallet Secure Row</div>
+                <div class="control-split-actions">
+                    <button class="gate-control-btn login-btn-luxury" onclick="triggerAction('Wallet Access Token Pass')">Login</button>
+                    <button class="gate-control-btn create-btn-luxury" onclick="triggerAction('Wallet Account Deployment Initialization')">Create</button>
                 </div>
             </div>
 
-            <!-- Row 3: Secure Email Core -->
-            <div class="auth-row-card">
-                <div class="row-header">📧 Alpha Secure Email</div>
-                <div class="input-inline-group">
-                    <input type="email" class="auth-input" id="emailInput" placeholder="Email Address">
-                    <input type="password" class="auth-input" id="emailPass" placeholder="Password Key">
+            <!-- Row 3: Secure Email Core Structure (Vertical Rows Setup Locked) -->
+            <div class="auth-module-row">
+                <div class="module-row-header">📧 Alpha Secure Email Node</div>
+                <div class="vertical-inputs-stack">
+                    <input type="email" class="luxury-field-input" id="emailInput" placeholder="Enter Valid Email Box Address">
+                    <input type="password" class="luxury-field-input" id="emailPass" placeholder="Enter Account Secret Password Handle">
                 </div>
-                <div class="action-split-panel">
-                    <button class="gate-btn login-btn" onclick="processEmailAuth('login')">Login</button>
-                    <button class="gate-btn create-btn" onclick="processEmailAuth('create')">Create</button>
+                <div class="control-split-actions">
+                    <button class="gate-control-btn login-btn-luxury" onclick="processEmailFlow('login')">Login</button>
+                    <button class="gate-control-btn create-btn-luxury" onclick="processEmailFlow('create')">Create</button>
                 </div>
             </div>
 
-            <!-- Row 4: Anonymous Username Handle -->
-            <div class="auth-row-card">
-                <div class="row-header">🥷 Anonymous Shadow Node</div>
-                <div class="input-inline-group">
-                    <input type="text" class="auth-input" id="anonUser" placeholder="Unique Username">
-                    <input type="password" class="auth-input" id="anonPass" placeholder="Access Pass">
+            <!-- Row 4: Anonymous Shadow Node Handle (Vertical Stack Alignment) -->
+            <div class="auth-module-row">
+                <div class="module-row-header">🥷 Anonymous Shadow Identifier</div>
+                <div class="vertical-inputs-stack">
+                    <input type="text" class="luxury-field-input" id="anonUser" placeholder="Enter Unique Global Username Signature">
+                    <input type="password" class="luxury-field-input" id="anonPass" placeholder="Enter Custom Access Passphrases Token">
                 </div>
-                <div class="action-split-panel">
-                    <button class="gate-btn login-btn" onclick="triggerAuthAction('Anon Login')">Login</button>
-                    <button class="gate-btn create-btn" onclick="triggerAuthAction('Anon Create')">Create</button>
+                <div class="control-split-actions">
+                    <button class="gate-control-btn login-btn-luxury" onclick="triggerAction('Shadow Account Verification Bypass')">Login</button>
+                    <button class="gate-control-btn create-btn-luxury" onclick="triggerAction('Shadow Identifier Token Allocation')">Create</button>
                 </div>
             </div>
         </div>
@@ -184,27 +146,32 @@
         const SUPABASE_ANON_KEY = "sb_publishable_xkKee6ZFrIxIEAAxO3TJEw_htwGbguV";
         const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-        document.getElementById('googleBypass').addEventListener('click', async () => {
-            await supabase.auth.signInWithOAuth({
-                provider: 'google', options: { redirectTo: window.location.origin + '/game-engine' }
-            });
-        });
+        // --- Three.js Holographic 3D Space Mesh Background Grid Script Subsystem ---
+        let scene, camera, renderer, crystalMesh;
+        function init3DHologram() {
+            const container = document.getElementById('hologram-3d-viewport');
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 4;
 
-        function triggerAuthAction(type) {
-            alert(`Sovereign Validation Node: Initiating ${type} configuration protocol parameters check...`);
-        }
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
 
-        function processEmailAuth(mode) {
-            const email = document.getElementById('emailInput').value;
-            if(!email) return alert('Enter Email Node Value');
-            if(mode === 'create') {
-                alert(`OTP Request Dispatched to [${email}]. Complete first-time code matching to lock verification status.`);
-            } else {
-                alert('Bypassing standard check: Verification verified. Granting direct dashboard token sync pass.');
-                window.location.href = '/game-engine';
-            }
+            // Construct Next-Gen Geometric Wireframe Mesh Node for Absolute Premium Look
+            const geometry = new THREE.IcosahedronGeometry(2, 1);
+            const material = new THREE.MeshBasicMaterial({ color: 0x00f0ff, wireframe: true, transparent: true, opacity: 0.12 });
+            crystalMesh = new THREE.Mesh(geometry, material);
+            scene.add(crystalMesh);
+
+            animate3DBackground();
         }
-    </script>
-</body>
-  </html>
-  
+        function animate3DBackground() {
+            requestAnimationFrame(animate3DBackground);
+            if(crystalMesh) { crystalMesh.rotation.y += 0.002; crystalMesh.rotation.x += 0.001; }
+            renderer.render(scene, camera);
+        }
+        window.addEventListener('resize', () => {
+            const container = document.getElementById('hologram-3d-viewport');
+            if(camera && renderer) {
+        
