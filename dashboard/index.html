@@ -20,7 +20,7 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between overflow-x-hidden">
 
-    <!-- NAVIGATION SYSTEM LAYER -->
+    <!-- MAIN LOBBY NAVIGATION SYSTEM BAR -->
     <nav class="w-full h-16 stake-bg-dark border-b border-neutral-900 px-4 md:px-8 flex justify-between items-center fixed top-0 z-40">
         <div class="flex items-center gap-6">
             <div>
@@ -30,6 +30,7 @@
             <div class="hidden md:flex items-center gap-4 text-xs font-bold uppercase tracking-wider text-neutral-400">
                 <a href="#" class="text-white border-b-2 border-white pb-4 mt-4">Lobby View</a>
                 <a href="games.html" class="hover:text-white transition">1ANTIX9 Originals</a>
+                <a href="vip.html" class="text-amber-400 hover:text-white font-cyber tracking-wider text-[11px] transition">💎 VIP Area</a>
             </div>
         </div>
 
@@ -46,11 +47,13 @@
     </nav>
 
     <!-- CORE PLATFORM DISPLAY LOBBY CONTAINER -->
-    <main class="w-full max-w-7xl mx-auto px-4 md:px-8 mt-24 flex-grow grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch mb-12">
+    <div id="main-casino-lobby-view" class="w-full max-w-7xl mx-auto px-4 md:px-8 mt-24 flex-grow grid grid-cols-1 lg:grid-cols-4 gap-6 items-stretch mb-12">
         <aside class="hidden lg:flex flex-col gap-2">
             <div class="stake-bg-card chrome-border rounded-xl p-4 flex flex-col gap-1 text-sm font-bold text-neutral-300">
                 <span class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber mb-2">Navigation Matrix</span>
-                <button class="w-full text-left py-2.5 px-3 rounded-lg stake-bg-dark text-white flex items-center gap-2">&bull; Casino Originals</button>
+                <button class="w-full text-left py-2.5 px-3 rounded-lg stake-bg-dark text-white flex items-center gap-2">&bull; Casino Lobby View</button>
+                <a href="games.html" class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-neutral-800/20 transition flex items-center gap-2">&bull; 1ANTIX9 Originals</a>
+                <a href="vip.html" class="w-full text-left py-2.5 px-3 rounded-lg text-amber-400 hover:bg-neutral-800/20 transition flex items-center gap-2">&bull; 💎 VIP Status Club</a>
                 <button class="w-full text-left py-2.5 px-3 rounded-lg hover:bg-neutral-800/20 transition flex items-center gap-2" onclick="openPaymentGateway()">&bull; Deposit Channel</button>
             </div>
         </aside>
@@ -60,59 +63,57 @@
                 <div class="absolute inset-0 bg-[radial-gradient(#2c3b45_1px,transparent_1px)] bg-[size:16px_16px] opacity-10"></div>
                 <div class="z-10">
                     <span class="text-[10px] font-cyber uppercase tracking-widest text-neutral-400 bg-black/40 px-2 py-0.5 rounded border border-neutral-800">1ANTIX9 Core Engine V2</span>
-                    <h2 class="text-3xl font-black font-cyber mt-1 tracking-wide text-white">OMNIVERSE PLATFORM REVENUE HOOK</h2>
-                    <p class="text-xs text-neutral-400 mt-1 font-mono">Automated split processing algorithms logging 28% flat governor cuts dynamically.</p>
+                    <h2 class="text-3xl font-black font-cyber mt-1 tracking-wide text-white">1ANTIX9 PREMIUM MULTIMODAL CASINO</h2>
+                    <p class="text-xs text-neutral-400 mt-1 font-mono">Automated split processing algorithms logging exactly 28% margins on-chain.</p>
                 </div>
                 <a href="games.html" class="z-10 btn-chrome-metallic font-cyber text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl text-center">Launch Lobby</a>
             </div>
 
+            <!-- THE EXTENDED STAKE-STYLE ALL ORIGINAL GAMES ROW -->
             <div>
-                <h3 class="text-sm font-black font-cyber uppercase tracking-wider text-neutral-400 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-white rounded-full"></span> Deployed 1ANTIX9 Originals</h3>
+                <h3 class="text-sm font-black font-cyber uppercase tracking-wider text-neutral-400 mb-4 flex items-center gap-2"><span class="w-2 h-2 bg-white rounded-full"></span> Deployed 1ANTIX9 Originals Cluster</h3>
                 <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                    
                     <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
                         <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🛫</div>
                         <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Aviator</span></div>
                     </a>
+                    
                     <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
                         <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🎲</div>
                         <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Dice Matrix</span></div>
                     </a>
+                    
                     <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
                         <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">💣</div>
                         <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Mines</span></div>
                     </a>
+
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🟢</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Plinko</span></div>
+                    </a>
+
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">📉</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Limbo</span></div>
+                    </a>
+
+                    <a href="games.html" class="stake-bg-card chrome-border rounded-xl overflow-hidden group cursor-pointer hover:-translate-y-1 transition-all duration-300">
+                        <div class="h-32 bg-neutral-900 flex items-center justify-center text-4xl group-hover:scale-110 transition duration-300">🎡</div>
+                        <div class="p-3 text-center border-t border-neutral-900 bg-black/20"><span class="text-xs font-bold font-cyber">1ANTIX9 Wheel</span></div>
+                    </a>
+
                 </div>
             </div>
         </section>
-    </main>
+    </div>
 
-    <!-- OMNIVERSE PAYMENT ROUTING MODULE GATEWAY -->
+    <!-- OMNIVERSE PAYMENT METHOD SELECTION OVERLAY -->
     <div id="payment-gateway-modal" class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 backdrop-blur-sm hidden">
         <div class="w-full max-w-lg stake-bg-dark chrome-border rounded-2xl overflow-hidden shadow-2xl p-6 flex flex-col gap-4">
             <div class="flex justify-between items-center border-b border-neutral-800 pb-3">
                 <div>
                     <h4 class="text-base font-black font-cyber uppercase tracking-wider text-white">1ANTIX9 OMNI PAYMENT SYSTEM</h4>
                     <p class="text-[10px] text-neutral-400 font-mono">Automated Aggregator Matrix Node Interface</p>
-                </div>
-                <button onclick="closePaymentGateway()" class="text-neutral-500 hover:text-white font-mono text-lg font-bold">&times;</button>
-            </div>
-            
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Local Card Payment Processing')">💳 Local Cards</button>
-                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Regional Bank Routing Wire')">🏛️ Local Banks</button>
-                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Mobile Wallet Network Processing')">📱 Mobile Wallets</button>
-                <button class="bg-[#1e2936] text-xs font-bold p-3 rounded-lg border border-neutral-800 hover:border-neutral-500 transition" onclick="selectProviderChannel('Direct Web3 Smart Node Handshake')">🪙 Web3 Crypto</button>
-            </div>
-
-            <div id="provider-routing-view" class="stake-bg-inner border border-neutral-800 p-4 rounded-xl text-center text-xs text-neutral-400 font-mono">Select a dynamic channel interface structure above.</div>
-        </div>
-    </div>
-
-    <!-- SECRET CONTROL PANEL HIDDEN SYSTEM OVERLAY -->
-    <div id="secret-admin-panel-view" class="fixed inset-0 bg-[#06080b] z-50 p-6 md:p-12 flex flex-col justify-between hidden">
-        <header class="w-full max-w-6xl mx-auto flex justify-between items-center border-b border-neutral-800 pb-4">
-            <div>
-                <h2 class="text-2xl font-black font-cyber text-red-500 tracking-widest">1ANTIX9 MASTER OWNER CONSOLE</h2>
-                <p class="text-[10px] text-neutral-500 font-mono uppercase tracking-widest">Autonomous Platform Architecture Terminal</p>
-            </div>
-            
+                        
