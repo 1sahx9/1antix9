@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ANTIX9 | Verified Web3 Operational Terminal</title>
+    <script src="https://tailwindcss.com"></script>
+    <!-- Ethers.js CDN to communicate directly with User Wallets -->
+    <script src="https://cloudflare.com" type="text/javascript"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; }
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+        .omniverse-matte-black { background: linear-gradient(135deg, #030303 0%, #0a0a0a 100%); }
+        .silver-panel-border { border: 1px solid rgba(192, 192, 192, 0.2); }
+        .liquid-silver-text {
+            background: linear-gradient(180deg, #ffffff 20%, #a8a8a8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-platinum {
+            background: linear-gradient(180deg, #ffffff 0%, #b8b8b8 50%, #686868 100%);
+            color: #000000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-platinum:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.25);
+        }
+    </style>
+</head>
+<body class="omniverse-matte-black min-h-screen p-4 md:p-6 flex flex-col justify-between">
+
+    <!-- PLATFORM HEADER: LIVE BALANCE FEED -->
+    <header class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-neutral-900 pb-4 mb-8">
+        <div>
+            <h1 class="text-3xl font-black font-cyber tracking-widest liquid-silver-text">1ANTIX9</h1>
+            <p class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber mt-0.5">Transparent iGaming Node</p>
+        </div>
+        
+        <!-- Live Verified Balances Display (Updates upon User wallet sign-off) -->
+        <div class="flex flex-wrap items-center justify-center gap-4">
+            <div class="bg-black/80 silver-panel-border rounded-xl px-4 py-2 text-center">
+                <span class="text-[9px] text-neutral-500 uppercase font-cyber block tracking-wider">Verified User Wallet Balance</span>
+                <span id="live-usdt-balance" class="text-base font-bold font-cyber text-white tracking-wide">0.0000 USDT</span>
+            </div>
+            <button id="btn-secure-connect" class="btn-platinum font-cyber text-xs font-black uppercase tracking-wider px-6 py-3 rounded-lg">
+                Secure Connect Wallet
+            </button>
+        </div>
+    </header>
+
+    <!-- CORE SIMULATION RUNTIME ENVIRONMENT -->
+    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch flex-grow mb-6">
+        
+        <!-- Center Interface Canvas Grid -->
+        <div class="lg:col-span-2 bg-neutral-950/60 silver-panel-border rounded-2xl p-6 flex flex-col justify-between gap-6">
+            <div class="flex justify-between items-center border-b border-neutral-900 pb-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-neutral-400 font-cyber">🛫 1ANTIX9 Aviator Core Module</span>
+                <span id="cycle-state-indicator" class="text-xs text-emerald-400 font-cyber font-bold uppercase tracking-wider animate-pulse">System Staged</span>
+            </div>
+
+            <!-- Main Live Visual Multiplier Space -->
+            <div class="bg-black border border-neutral-900 w-full h-64 rounded-xl flex flex-col items-center justify-center relative">
+                <div class="absolute inset-0 bg-[radial-gradient(#202020_1px,transparent_1px)] [background-size:20px_20px] opacity-30"></div>
+                <div id="multiplier-counter" class="text-7xl font-black font-cyber text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.15)]">1.00x</div>
+                <div class="text-[11px] text-neutral-500 mt-2 font-mono uppercase tracking-widest">User-Controlled Real Money Settlement System</div>
+            </div>
+
+            <!-- Transaction Placement Grid Controls -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-black border border-neutral-900 p-3.5 rounded-xl flex flex-col gap-1">
+                    <label class="text-[10px] text-neutral-400 font-cyber uppercase tracking-wider">Authorized Stake Size (USDT)</label>
+                    <input type="number" id="user-bet-size" value="10.00" class="bg-transparent text-white font-cyber font-bold focus:outline-none text-lg w-full">
+                </div>
+                <button id="btn-submit-stake" class="btn-platinum font-cyber font-black uppercase text-sm tracking-widest rounded-xl">
+                    Approve & Sign Transaction
+                </button>
+            </div>
+        </div>
+
+        <!-- Realtime System Security Ledger Streams -->
+        <div class="bg-neutral-950/60 silver-panel-border rounded-2xl p-6 flex flex-col justify-between gap-4">
+            <div>
+                <h3 class="text-xs font-bold font-cyber uppercase tracking-wider text-neutral-300 border-b border-neutral-900 pb-3 mb-4">
+                    🛡️ Compliance & Safety Stream
+                </h3>
+                <div id="console-logs" class="bg-black/90 border border-neutral-900 rounded-xl p-4 h-64 overflow-y-auto text-xs font-mono text-neutral-400 space-y-2">
+                    <div class="text-neutral-500">[SYSTEM]: Infrastructure monitoring active.</div>
+                    <div class="text-neutral-500">[SECURITY]: User approval mandatory for all asset states.</div>
+                </div>
+            </div>
+
+            <!-- Governor Allocation Monitor View -->
+            <div class="bg-neutral-900/40 p-4 rounded-xl border border-neutral-800 text-center">
+                <span class="text-[10px] text-neutral-500 uppercase font-cyber block tracking-wider">28% Retained House Edge Balance</span>
+                <span id="house-edge-display" class="text-base font-bold font-cyber text-neutral-300">0.0000 USDT</span>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER PROTOCOLS -->
+    <footer class="w-full max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-600 pt-4 border-t border-neutral-900 gap-2">
+        <p>&copy; 2026 1ANTIX9 Architecture Hub. Legitimate Peer-to-Peer Prediction Framework.</p>
+        <p class="font-mono">Status: Secure Node Validated</p>
+    </footer>
+
+    <!-- INTERACTION LOGIC INJECTION SCRIPT -->
+    <script>
+        let provider, signer, userAddress;
+        
+        // Target Token Details (Standard Mainnet USDT Contact Contract Interface Placeholders)
+        const USDT_CONTRACT_ADDRESS = "0xdAC17F958D2ee523a2206206994597C13D831ec7"; 
+        
+        const logContainer = document.getElementById('console-logs');
+        const usdtBalanceElement = document.getElementById('live-usdt-balance');
+
+        function pushSystemLog(text, color = "text-neutral-400") {
+            const entry = document.createElement('div');
+            entry.className = color;
+            entry.innerText = `[${new Date().toLocaleTimeString()}]: ${text}`;
+            logContainer.appendChild(entry);
+            logContainer.scrollTop = logContainer.scrollHeight;
+        }
+
+        // Standard Web3 Handshake: Fetching balances with User Permission Only
+        async function initializeWeb3Handshake() {
+            if (typeof window.ethereum !== 'undefined') {
+                try {
+                    pushSystemLog("Requesting explicit cryptographic permission from user extension...", "text-yellow-500");
+                    
+                    // Trigger wallet unlock popup safely
+                    provider = new THREE.ethers.providers.Web3Provider(window.ethereum);
+                    await provider.send("eth_requestAccounts", []);
+                    
+                    signer = provider.getSigner();
+                    userAddress = await signer.getAddress();
+                    
+                    pushSystemLog(`Handshake accepted by address: ${userAddress}`, "text-emerald-400");
+                    document.getElementById('btn-secure-connect').innerText = "Active Node Locked";
+                    
+                    // Fetch real network core balance (Native ETH/BNB depending on network selected by user)
+                    const rawBalance = await provider.getBalance(userAddress);
+                    const formattedBalance = THREE.ethers.utils.formatEther(rawBalance);
+                    
+                    // For simulation display accuracy, we show the network units as user credit liquidity parameters
+                    usdtBalanceElement.innerText = parseFloat(formattedBalance).toFixed(4) + " CORE-ASSETS";
+                    pushSystemLog("Live crypto balances synced dynamically from chain state configuration.", "text-white");
+                    
+                } catch (err) {
+                    console.error(err);
+                    pushSystemLog("User rejected provider synchronization signature.", "text-red-500");
+                }
+            } else {
+                alert("No hardware secure wallet provider detected. Please launch via Trust Wallet DApp interface or install MetaMask.");
+            }
+        }
+
+        // Setup Event Listeners
+        document.getElementById('btn-secure-connect').addEventListener('click', initializeWeb3Handshake);
+
+        document.getElementById('btn-submit-stake').addEventListener('click', () => {
+            if(!userAddress) {
+                alert("Please complete the secure wallet handshake connectivity initialization first.");
+                return;
+            }
+      
