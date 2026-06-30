@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ANTIX9 | Omniverse Core Game Matrix</title>
+    <script src="https://tailwindcss.com"></script>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; }
+        .font-cyber { font-family: 'Orbitron', sans-serif; }
+        .premium-dark-bg { background: radial-gradient(circle at center, #0f0f0f 0%, #000000 100%); }
+        .liquid-silver-border { border: 1px solid rgba(255, 255, 255, 0.15); }
+        .platinum-text {
+            background: linear-gradient(180deg, #ffffff 0%, #b5b5b5 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-action-silver {
+            background: linear-gradient(180deg, #ffffff 0%, #9c9c9c 100%);
+            color: #000000;
+            font-weight: 900;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-action-silver:hover {
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body class="premium-dark-bg min-h-screen p-4 md:p-8 flex flex-col justify-between">
+
+    <!-- UPPER NAVIGATION CONTROL BAR -->
+    <header class="w-full max-w-7xl mx-auto flex justify-between items-center border-b border-neutral-900 pb-4 mb-8">
+        <div>
+            <h1 class="text-3xl font-black font-cyber tracking-widest platinum-text">1ANTIX9 MULTIVERSE</h1>
+            <p class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber">Decentralized P2P Operations</p>
+        </div>
+        
+        <!-- Live Ledger Interface Monitoring -->
+        <div class="bg-neutral-950 liquid-silver-border rounded-xl px-5 py-2 text-right">
+            <span class="text-[9px] text-neutral-400 block font-cyber uppercase tracking-wider">Active Wallet Balance</span>
+            <span id="header-balance-view" class="text-base font-bold font-cyber text-white">0.00 USDT</span>
+        </div>
+    </header>
+
+    <!-- MAIN INTERACTIVE ARCHITECTURE HUB -->
+    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch flex-grow mb-6">
+        
+        <!-- COMPONENT 1: PROVABLY FAIR DICE MATRIX -->
+        <div class="bg-neutral-950/40 liquid-silver-border rounded-2xl p-6 flex flex-col justify-between gap-6">
+            <div>
+                <div class="flex justify-between items-center border-b border-neutral-900 pb-2 mb-4">
+                    <h3 class="text-sm font-bold font-cyber uppercase tracking-wider text-neutral-300">🎲 1ANTIX9 Dice Suite</h3>
+                    <span class="text-[10px] bg-neutral-900 text-neutral-400 border border-neutral-800 px-2 py-0.5 rounded uppercase">RNG Verified</span>
+                </div>
+                
+                <!-- Dice Rolling Visual Canvas Space -->
+                <div class="bg-black border border-neutral-900 w-full h-40 rounded-xl flex items-center justify-center relative mb-4">
+                    <div id="dice-result-box" class="text-5xl font-black font-cyber text-white tracking-tight">50.00</div>
+                    <div class="absolute bottom-3 text-[10px] text-neutral-500 uppercase tracking-widest font-mono">Target Region: Over 50.00</div>
+                </div>
+
+                <!-- Roll Range Slider Input -->
+                <div class="flex flex-col gap-2">
+                    <label class="text-xs text-neutral-400 font-cyber uppercase">Adjust Prediction Boundary</label>
+                    <input type="range" min="2" max="98" value="50" class="w-full accent-white bg-neutral-800 rounded-lg appearance-none h-2" id="dice-slider">
+                    <div class="flex justify-between text-xs text-neutral-500 font-mono mt-1">
+                        <span>Min: 2</span>
+                        <span>Max: 98</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Execution triggers -->
+            <button id="btn-roll-dice" class="w-full btn-action-silver py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">
+                Roll 1ANTIX9 Matrix
+            </button>
+        </div>
+
+        <!-- COMPONENT 2: THE AVIATOR HIGH-ALTITUDE TRACKER -->
+        <div class="bg-neutral-950/40 liquid-silver-border rounded-2xl p-6 flex flex-col justify-between gap-6 lg:col-span-2">
+            <div>
+                <div class="flex justify-between items-center border-b border-neutral-900 pb-2 mb-4">
+                    <h3 class="text-sm font-bold font-cyber uppercase tracking-wider text-neutral-300">✈️ 1ANTIX9 Aviator Node</h3>
+                    <span id="aviator-status" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase tracking-wider">Awaiting Flight Vector</span>
+                </div>
+
+                <!-- Simulation flight timeline room grid -->
+                <div class="bg-black/80 border border-neutral-900 w-full h-48 rounded-xl flex flex-col items-center justify-center relative overflow-hidden">
+                    <div class="absolute inset-0 bg-[linear-gradient(to_right,#111_1px,transparent_1px),linear-gradient(to_bottom,#111_1px,transparent_1px)] bg-[size:24px_24px] opacity-40"></div>
+                    <span id="aviator-multiplier" class="text-6xl font-black font-cyber text-white z-10">1.00x</span>
+                </div>
+            </div>
+
+            <!-- Configuration input fields layer -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-black border border-neutral-900 p-3 rounded-xl flex flex-col gap-0.5">
+                    <label class="text-[10px] text-neutral-500 font-cyber uppercase">Stake Multiplier Limit</label>
+                    <input type="number" id="aviator-amount" value="50.00" class="bg-transparent text-white font-cyber font-bold focus:outline-none text-base">
+                </div>
+                <button id="btn-aviator-action" class="btn-action-silver font-cyber text-xs uppercase tracking-widest rounded-xl">
+                    Initiate Flight Sequence
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER TECHNICAL SPECIFICATIONS MONITOR -->
+    <footer class="w-full max-w-7xl mx-auto border-t border-neutral-900 pt-4 flex flex-col sm:flex-row justify-between items-center text-xs text-neutral-500 gap-2">
+        <p>&copy; 2026 1ANTIX9 Enterprise Suite. Validated Multi-Game Architecture Sandbox Node.</p>
+        <div class="flex gap-4 font-mono">
+            <span>Protocol Status: <span class="text-emerald-400">Online</span></span>
+            <span>Network: <span class="text-neutral-300">EVM Compatible</span></span>
+        </div>
+    </footer>
+
+    <!-- LOGICAL ARCHITECTURE OPERATIONS SCRIPT -->
+    <script>
+        // Local state management parameters
+        let mockupBalance = 5000.00;
+        
+        const balanceView = document.getElementById('header-balance-view');
+        const diceResult = document.getElementById('dice-result-box');
+        const diceSlider = document.getElementById('dice-slider');
+        const avMultiplier = document.getElementById('aviator-multiplier');
+        const avStatus = document.getElementById('aviator-status');
+
+        // Sync visual balances initially
+        balanceView.innerText = mockupBalance.toFixed(2) + " USDT";
+
+        // Component 1: Provably Fair Dice Simulation Logic
+        document.getElementById('btn-roll-dice').addEventListener('click', () => {
+            const boundaryValue = parseInt(diceSlider.value);
+            
+            // Simulating high-grade server seed hash outcome generation
+            const rolledOutcome = (Math.random() * 100).toFixed(2);
+            diceResult.innerText = rolledOutcome;
+
+            if (parseFloat(rolledOutcome) > boundaryValue) {
+                mockupBalance += 25.00;
+                diceResult.className = "text-5xl font-black font-cyber text-emerald-400 tracking-tight transition-all";
+            } else {
+                mockupBalance -= 25.00;
+                diceResult.className = "text-5xl font-black font-cyber text-red-500 tracking-tight transition-all";
+            }
+            balanceView.innerText = mockupBalance.toFixed(2) + " USDT";
+        });
+
+        // Component 2: Aviator Dynamic Tracking Loop System
+        let avInterval = null;
+        document.getElementById('btn-aviator-action').addEventListener('click', () => {
+            if (avInterval) clearInterval(avInterval);
+            
+            let count = 1.00;
+            avStatus.innerText = "VECTOR FLYING";
+            avStatus.className = "text-[10px] text-yellow-400 font-cyber font-bold tracking-wider animate-pulse";
+            
+            avInterval = setInterval(() => {
+                count += (Math.random() * 0.18);
+                avMultiplier.innerText = count.toFixed(2) + "x";
+
+                // Standard crash check condition threshold parameters
+                if (Math.random() < 0.09) {
+                    clearInterval(avInterval);
+                    avStatus.innerText = "FLEW AWAY";
+                    avStatus.className = "text-[10px] text-red-500 font-cyber font-bold tracking-wider";
+                    avMultiplier.innerText = "CRASHED @" + count.toFixed(2) + "x";
+                }
+            }, 150);
+        });
+    </script>
+</body>
+                      </html>
+                      
