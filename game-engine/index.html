@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ANTIX9 | OMNIVERSE 3D CORE ENGINE</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Supabase Core Client Library SDK for Backend Storage Logic Integration -->
+    <script src="https://jsdelivr.net"></script>
+    <!-- Three.js Core WebGL Library for Ultra Premium High Definition 3D Physics Graphics Rendering -->
+    <script src="https://cloudflare.com"></script>
+    <style>
+        :root {
+            --neon-glow: #ff0055;
+            --cyber-dark: #020204;
+            --gold-status: #ffb700;
+            --luxury-blue: #00f0ff;
+            --silver-metal: linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        body {
+            background-color: var(--cyber-dark);
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .casino-viewport {
+            width: 100%;
+            max-width: 480px;
+            height: 100vh;
+            background: #000000;
+            border: 3px solid #cfd9df;
+            border-image: linear-gradient(135deg, #e2ebf0 0%, #cfd9df 50%, #1e272e 100%) 1;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 15px;
+            box-shadow: 0 0 60px rgba(0, 240, 255, 0.12);
+        }
+        .header-panel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+        }
+        .brand-identity {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            color: #ffffff;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px var(--luxury-blue);
+        }
+        .numeric-counter {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            color: var(--gold-status);
+            font-weight: 900;
+            text-shadow: 0 0 8px var(--gold-status);
+        }
+        .game-viewport-box {
+            flex: 1;
+            background: #000000;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #webgl-canvas-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+        .multiplier-display {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.8rem;
+            font-weight: 900;
+            color: #ffffff;
+            z-index: 10;
+            text-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+        }
+        .vip-status-card {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 240, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 12px;
+            margin-top: 15px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #fff;
+        }
+        .payment-gateway-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+            margin-top: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            z-index: 5;
+        }
+        .pay-node-btn {
+            background: #09090e;
+            border: 1px solid #1a1a26;
+            padding: 10px;
+            border-radius: 6px;
+            color: #ccc;
+            font-size: 0.75rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-align: center;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.2s ease;
+        }
+        .pay-node-btn:active { background: #fff; color: #000; }
+        .control-trigger-panel { margin-top: 15px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; z-index: 5; }
+        .action-btn {
+            background: linear-gradient(135deg, #111116 0%, #2c3e50 100%);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            color: white;
+            padding: 16px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.1s ease;
+        }
+        .action-btn:active { transform: scale(0.96); }
+        .action-btn.active-bet-btn {
+            background: linear-gradient(135deg, #ff0055 0%, #aa0033 100%);
+            border: none;
+            box-shadow: 0 4px 20px rgba(255, 0, 85, 0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="casino-viewport">
+        <!-- Top Executive Core Metrics Header -->
+        <div class="header-panel">
+            1ANTIX9 MAIN</div>
+            <div class="numeric-counter" id="balanceDisplay">0.00 1ANTIX9</div>
+        </div>
+
+        <!-- 3D Physics WebGL Engine Vector Canvas Space Inside Pitch Black Viewport -->
+        <div class="game-viewport-box">
+            <div id="webgl-canvas-container"></div>
+            <div class="multiplier-display" id="multiplierDisplay">1.00x</div>
+        </div>
+
+        <!-- Status Card Tier -->
+        <div class="vip-status-card">
+            RANK 9 [OMNIVERSE CORE ENGINE ACTIVE]
+        </div>
+
+        <!-- Omniverse Multi-Payment Gateway Bridge Channel Routing Grid -->
+        <div class="payment-gateway-grid">
+            <div class="pay-node-btn" onclick="triggerOmniPayment('Trust Wallet')">TRUST</div>
+            <div class="pay-node-btn" onclick="triggerOmniPayment('MetaMask')">METAMASK</div>
+            <div class="pay-node-btn" onclick="triggerOmniPayment('Visa / Card')">VISA</div>
+            <div class="pay-node-btn" onclick="triggerOmniPayment('Bitcoin Node')">BITCOIN</div>
+            <div class="pay-node-btn" onclick="triggerOmniPayment('Binance Pay')">BINANCE</div>
+            <div class="pay-node-btn" onclick="triggerOmniPayment('USDT Direct')">USDT</div>
+        </div>
+
+        <!-- System Core Interface Action Inputs Triggers -->
+        <div class="control-trigger-panel">
+            <button class="action-btn" id="walletTrigger" onclick="alert('Trust Wallet Sovereign Target Node Vault Locked.')">TRUST WALLET</button>
+            <button class="action-btn active-bet-btn" id="betTrigger">Bet Active</button>
+        </div>
+    </div>
+
+    <script>
+        // Target Hardcoded Sovereign Destination Encryption Vault Entry Node
+        const TRUST_WALLET_USDT_TARGET = "TRUST_WALLET_UTAL5OYT_VAULT_ACTIVE";
+        
+        // Secure Cloud Backend Server System Authentication Credentials Mapping Token
+        const SUPABASE_URL = "https://supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_xkKee6ZFrIxIEAAxO3TJEw_htwGbguV";
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const balanceDisplay = document.getElementById('balanceDisplay');
+        const multiplierDisplay = document.getElementById('multiplierDisplay');
+        const betTrigger = document.getElementById('betTrigger');
+        const container = document.getElementById('webgl-canvas-container');
+
+        let currentBalance = 0.00;
+        let runningMultiplier = 1.00;
+        let isSimulating = false;
+
+        // --- Three.js Advanced 3D Space Physics Engine Subsystem ---
+        let scene, camera, renderer, particleSystem, flightLineMesh;
+        let pointsArray = [];
+
+        function init3DEngine() {
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 5;
+
+            renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Create Luxurious 3D Cyber Matrix Particle Starfield
+            const particleCount = 200;
+            const geometry = new THREE.BufferGeometry();
+            const positions = new Float32Array(particleCount * 3);
+
+            for (let i = 0; i < particleCount * 3; i++) {
+                positions[i] = (Math.random() - 0.5) * 10;
+            }
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+            const material = new THREE.PointsMaterial({ color: 0x00f0ff, size: 0.04, transparent: true, opacity: 0.6 });
+            particleSystem = new THREE.Points(geometry, material);
+            scene.add(particleSystem);
+
+            // Create Dynamic 3D Flight Path Strip Core Mesh
+            const lineGeometry = new THREE.BufferGeometry();
+            const lineMaterial = new THREE.LineBasicMaterial({ color: 0xff0055, linewidth: 3 });
+            flightLineMesh = new THREE.Line(lineGeometry, lineMaterial);
+            scene.add(flightLineMesh);
+
+            animate3DScene();
+        }
+
+      
