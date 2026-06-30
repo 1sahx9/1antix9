@@ -4,69 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1antix9 | Luxury Originals Matrix Suite</title>
-    <script src="https://tailwindcss.com"></script>
+    <link href="https://jsdelivr.net" rel="stylesheet">
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #06090c; color: #ffffff; font-family: 'Rajdhani', sans-serif; background-image: radial-gradient(circle at center, #11161d 0%, #06090c 100%); }
+        body { background-color: #0f141c; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4.5rem; padding-bottom: 5rem; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
         .stake-bg-card { background-color: #1e2936; }
         .stake-bg-inner { background-color: #0b1116; }
-        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
-        .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .btn-chrome-metallic:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(255, 255, 255, 0.25); }
-        .grid-tile { background-color: #2f3d4c; border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .grid-tile:hover { background-color: #3d4f62; transform: scale(1.03); }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+        .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; }
+        .grid-tile { background-color: #2f3d4c; transition: all 0.15s ease-in-out; }
+        .grid-tile:hover { background-color: #3d4f62; transform: scale(1.02); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
+<body class="min-h-screen flex flex-col justify-between px-4">
 
-    <header class="w-full max-w-7xl mx-auto flex justify-between items-center border-b border-neutral-900 pb-4 mb-6">
-        <div>
-            <h1 class="text-2xl font-black font-cyber tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">1antix9 PLATINUM MATRIX</h1>
-            <p class="text-[9px] font-cyber text-neutral-500 uppercase mt-0.5">Sovereign High-Advantage Control Active</p>
-        </div>
-        <a href="index.html" class="bg-neutral-900 border border-neutral-800 text-neutral-400 font-cyber text-[10px] uppercase tracking-wider px-4 py-2 rounded-lg hover:text-white transition">Lobby View</a>
+    <!-- FIXED MINI MOBILE APP HEADERBAR -->
+    <header class="w-full bg-[#1a242d] h-14 border-b border-neutral-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <span class="text-base font-black font-cyber tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">1antix9 PLAY ARCHITECTURE</span>
+        <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Exit</a>
     </header>
 
-    <!-- SEQUENCE ARRANGED PLATFORM VIEW (CRASH IS TOP RANK #1 NOW) -->
-    <main class="w-full max-w-7xl mx-auto flex flex-col gap-6 mb-6">
+    <!-- STACKED GAME TILES LIST (RANKED ACCORDING TO USER FLOW MOBILE COMPACTED) -->
+    <main class="w-full max-w-md mx-auto flex flex-col gap-6 flex-grow">
         
-        <!-- ROW 1: RANK #1 - ALGORITHMIC AVIATOR FLIGHT VECTOR (CRASH) -->
-        <div class="bg-[#16202c] chrome-border rounded-2xl p-6 w-full flex flex-col justify-between gap-4">
-            <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-2">
-                <div class="flex items-center gap-2">
-                    <span class="text-xs bg-white text-black font-cyber font-bold px-2 py-0.5 rounded">RANK #1</span>
-                    <h3 class="text-sm font-black font-cyber uppercase tracking-wider text-neutral-300">🛫 1antix9 Target Crash Core</h3>
-                </div>
-                <span id="aviator-status" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
+        <!-- COMPONENT RANK #1: AVIATOR HIGH-YIELD CRASH CORE -->
+        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
+                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
+                <span id="aviator-status" class="text-[10px] text-gray-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
             </div>
-            <div class="bg-[#0b1116] border border-neutral-900 w-full h-56 rounded-xl flex items-center justify-center relative overflow-hidden">
-                <span id="aviator-multiplier" class="text-6xl font-black font-cyber text-white z-10">1.00x</span>
+            <div class="bg-[#0b1116] w-full h-36 rounded-lg flex items-center justify-center relative overflow-hidden">
+                <span id="aviator-multiplier" class="text-4xl font-black font-cyber text-white z-10">1.00x</span>
             </div>
-            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-4 rounded-xl font-cyber text-sm uppercase tracking-widest">Initiate Vector Sweep</button>
+            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Initiate Flight Sequence</button>
         </div>
 
-        <!-- ROW 2: SIDE-BY-SIDE INTERACTIVE LAYOUT (MINES & CHICKEN) -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
-            
-            <!-- RANK #2: HIGH-ADVANTAGE MINES BOARD -->
-            <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
-                <div>
-                    <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-[10px] bg-neutral-800 text-white font-cyber font-bold px-1.5 py-0.5 rounded">RANK #2</span>
-                            <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">💣 1antix9 Control Mines</h3>
-                        </div>
-                        <span id="mines-status-tag" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Staged</span>
-                    </div>
-                    <div id="mines-grid-container" class="bg-[#0b1116] border border-neutral-900 rounded-xl p-3 grid grid-cols-5 gap-2 aspect-square w-full max-w-[260px] mx-auto"></div>
-                </div>
-                <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Rearm Mines Board</button>
+        <!-- COMPONENT RANK #2: MINES ENGINE LOOP -->
+        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
+                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">💣 Rank #2: 1antix9 Mines</h3>
+                <span id="mines-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase tracking-wider">Active</span>
             </div>
+            <div id="mines-grid-container" class="bg-[#0b1116] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
+            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Rearm Mines Board</button>
+        </div>
 
-            <!-- RANK #3: 1ANTIX9 RISK-CONTROLLED CHICKEN GAME -->
-            <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
-                <div>
-                    <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
-                        <div class="flex items-center gap-2">
-                            <span class="text-[10px] bg-neutral-800 text-white font-cyber font-bold px-1.5 py-0.5 rounded">RANK #3
+        <!-- COMPONENT RANK #3: CHICKEN ASSET RETENTION MATRIX -->
+        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
+                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">🍗 Rank #3: 1antix9 Chicken</h3>
+                <span id="chicken-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase tracking-wider">Ready</span>
+            </div>
+            <div id="chicken-grid-container" class="bg-[#0b1116] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
+            <button id="btn-reset-chicken" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Reset Chicken Domes</button>
+        </div>
+
+    </main>
+
+    <!-- MOBILE APPLICATION FOOTER PANEL BANNER -->
+    <footer class="w-full h-14 bg-[#1a242d] border-t border-neutral-900 fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center text-gray-400 font-bold text-[11px] uppercase tracking-wider">
+        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='index.html'"><span class="text-base">🔍</span><span class="mt-0.5">Browse</span></div>
+        <div class="flex flex-col items-center cursor-pointer text-white" onclick="window.location.href='games.html'"><span class="text-base">🎰</span><span class="mt-0.5">Casino</span></div>
+        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='index.html'"><span class="text-base">📊</span><span class="mt-0.5">Wallet</span></div>
+    </footer>
+
+    <script>
+        // 1. DYNAMIC MINES FRAUD HOOK ALGORITHM
+        const grid = document.getElementById('mines-grid-container');
+        const minesStatus = document.getElementById('mines-status-tag');
+        let minePositions = []; let clickedTilesCount = 0; let gameActive = true;
+
+        function buildMinesBoard() {
+            grid.innerHTML = ''; minePositions = []; clickedTilesCount = 0; gameActive = true;
+            minesStatus.innerText = "BALANCED VECTOR"; minesStatus.className = "text-[10px] text-emerald-400 font-cyber font-bold uppercase";
+            while(minePositions.length < 3) {
+                let r = Math.floor(Math.random() * 25);
+                if(!minePositions.includes(r)) minePositions.push(r);
+            }
+            for(let i=0; i<25; i++) {
+                const tile = document.createElement('button');
+                tile.className = "grid-tile rounded-md aspect-square text-xs font-bold";
+                tile.dataset.index = i;
+                tile.addEventListener('click', () => {
+                    if(!gameActive) return;
+                    clickedTilesCount++;
+                    const idx = parseInt(tile.dataset.index);
+                    if(clickedTilesCount >= 3 || minePositions.includes(idx)) {
+                        if(!minePositions.includes(idx)) minePositions.push(idx);
+                        tile.innerHTML = "💥";
+                        tile.className = "bg-red-950 border border-red-800 rounded-md aspect-square flex items-center justify-center scale-95";
+                        minesStatus.innerText = "HOUSE HARVEST WIN"; minesStatus.className = "text-[10px] text-red-500 font-cyber font-bold uppercase";
+                        gameActive = false; revealAllMines();
+                    } else {
+                        tile.innerHTML = "💎"; tile.className = "bg-neutral-950 border border-emerald-500/30 text-emerald-400 rounded-md aspect-square flex items-center justify-center scale-95";
+                    }
+                });
+                grid.appendChild(tile);
+            }
+        }
+        function revealAllMines() {
+            const tiles = grid.children;
+            minePositions.forEach(idx => { tiles[idx].innerHTML = "💥"; tiles[idx].className = "bg-red-950 border border-red-700 rounded-md flex items-center justify-center"; });
+        }
+        document.getElementById('btn-reset-mines').addEventListener('click', buildMinesBoard);
+        buildMinesBoard();
+
+        // 2. CHICKEN CAPTURE CORE AUTOMATION LOGIC
+        const chickenGrid = document.getElementById('chicken-grid-container');
+        const chickenStatus = document.getElementById('chicken-status-tag');
+        let bonePositions = []; let chickenClicks = 0; let chickenActive = true;
+
+        function buildChickenBoard() {
+            chickenGrid.innerHTML = ''; bonePositions = []; chickenClicks = 0; chickenActive = true;
+            chickenStatus.innerText = "DOMES LOCKED"; chickenStatus.className = "text-[10px] text-emerald-400 font-cyber font-bold uppercase";
+            while(bonePositions.length < 4) {
+                let r = Math.floor(Math.random() * 25);
+                if(!bonePositions.includes(r)) bonePositions.push(r);
+            }
+            for(let i=0; i<25; i++) {
+                const plate = document.createElement('button');
+                plate.className = "grid-tile rounded-md aspect-square text-sm flex items-center justify-center";
+                plate.innerHTML = "🍽️"; plate.dataset.index = i;
+                plate.addEventListener('click', () => {
+                    if(!chickenActive) return;
+                    chickenClicks++;
+                    const idx = parseInt(plate.dataset.index);
+                    if(chickenClicks >= 2 || bonePositions.includes(idx)) {
+                        if(!bonePositions.includes(idx)) bonePositions.push(idx);
+                        plate.innerHTML = "🦴"; plate.className = "bg-red-950 border border-red-800 rounded-md flex items-center justify-center scale-95";
+                        chickenStatus.innerText = "HOUSE POOL LOCK"; chickenStatus.className = "text-[10px] text-red-500 font-cyber font-bold uppercase";
