@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1ANTIX9 | OMNIVERSE SECURE AUTH MATRIX</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <script src="https://jsdelivr.net"></script>
+    <style>
+        :root {
+            --neon-glow: #ff0055;
+            --cyber-dark: #030305;
+            --luxury-blue: #00f0ff;
+            --silver-metal: linear-gradient(135deg, #cfd9df 0%, #e2ebf0 100%);
+            --metallic-border: linear-gradient(135deg, #535c68 0%, #30336b 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
+        body {
+            background-color: var(--cyber-dark);
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+            background: rgba(10, 10, 15, 0.85);
+            border: 2px solid #222235;
+            border-image: linear-gradient(to bottom, #718093, #2f3640) 1;
+            border-radius: 4px;
+            padding: 25px;
+            box-shadow: 0 0 40px rgba(0, 240, 255, 0.08);
+            backdrop-filter: blur(15px);
+        }
+        .portal-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: 1.4rem;
+            text-align: center;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #fff 0%, #888 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 10px rgba(255,255,255,0.1);
+        }
+        .auth-row-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .auth-row-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .row-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 900;
+            color: var(--luxury-blue);
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .input-inline-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+        .auth-input {
+            flex: 1;
+            padding: 10px;
+            background: #08080c;
+            border: 1px solid #1e272e;
+            border-radius: 6px;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1rem;
+        }
+        .auth-input:focus { border-color: var(--luxury-blue); outline: none; }
+        .action-split-panel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        .gate-btn {
+            padding: 11px;
+            border: none;
+            border-radius: 6px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.2s ease;
+        }
+        .gate-btn.create-btn {
+            background: var(--silver-metal);
+            color: #000;
+            box-shadow: 0 3px 10px rgba(255,255,255,0.1);
+        }
+        .gate-btn.login-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        .gate-btn:active { transform: scale(0.97); }
+        .google-bypass-btn {
+            width: 100%;
+            background: #ffffff;
+            color: #000;
+            padding: 14px;
+            border-radius: 8px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 900;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="portal-title">1ANTIX9 CONTROL NODE</div>
+        
+        <div class="auth-row-grid">
+            <!-- Row 1: Google Elite Bypass -->
+            <button class="google-bypass-btn" id="googleBypass">
+                <svg style="width:16px;height:16px;" viewBox="0 0 24 24"><path fill="#EA4335" d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.113-5.121 4.113-3.415 0-6.191-2.776-6.191-6.191s2.776-6.191 6.191-6.191c1.554 0 2.977.577 4.073 1.527l3.053-3.053C19.345 2.1 16.035 1 12.24 1 6.033 1 1 6.033 1 12.24s5.033 11.24 11.24 11.24c6.478 0 11.24-4.54 11.24-11.24 0-.766-.085-1.489-.24-2.195H12.24z"/></svg>
+                Continue with Google
+            </button>
+
+            <!-- Row 2: Web3 Wallet Row -->
+            <div class="auth-row-card">
+                <div class="row-header">💳 Web3 Wallet Gateway</div>
+                <div class="action-split-panel">
+                    <button class="gate-btn login-btn" onclick="triggerAuthAction('Wallet Login')">Login</button>
+                    <button class="gate-btn create-btn" onclick="triggerAuthAction('Wallet Create')">Create</button>
+                </div>
+            </div>
+
+            <!-- Row 3: Secure Email Core -->
+            <div class="auth-row-card">
+                <div class="row-header">📧 Alpha Secure Email</div>
+                <div class="input-inline-group">
+                    <input type="email" class="auth-input" id="emailInput" placeholder="Email Address">
+                    <input type="password" class="auth-input" id="emailPass" placeholder="Password Key">
+                </div>
+                <div class="action-split-panel">
+                    <button class="gate-btn login-btn" onclick="processEmailAuth('login')">Login</button>
+                    <button class="gate-btn create-btn" onclick="processEmailAuth('create')">Create</button>
+                </div>
+            </div>
+
+            <!-- Row 4: Anonymous Username Handle -->
+            <div class="auth-row-card">
+                <div class="row-header">🥷 Anonymous Shadow Node</div>
+                <div class="input-inline-group">
+                    <input type="text" class="auth-input" id="anonUser" placeholder="Unique Username">
+                    <input type="password" class="auth-input" id="anonPass" placeholder="Access Pass">
+                </div>
+                <div class="action-split-panel">
+                    <button class="gate-btn login-btn" onclick="triggerAuthAction('Anon Login')">Login</button>
+                    <button class="gate-btn create-btn" onclick="triggerAuthAction('Anon Create')">Create</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://supabase.co";
+        const SUPABASE_ANON_KEY = "sb_publishable_xkKee6ZFrIxIEAAxO3TJEw_htwGbguV";
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        document.getElementById('googleBypass').addEventListener('click', async () => {
+            await supabase.auth.signInWithOAuth({
+                provider: 'google', options: { redirectTo: window.location.origin + '/game-engine' }
+            });
+        });
+
+        function triggerAuthAction(type) {
+            alert(`Sovereign Validation Node: Initiating ${type} configuration protocol parameters check...`);
+        }
+
+        function processEmailAuth(mode) {
+            const email = document.getElementById('emailInput').value;
+            if(!email) return alert('Enter Email Node Value');
+            if(mode === 'create') {
+                alert(`OTP Request Dispatched to [${email}]. Complete first-time code matching to lock verification status.`);
+            } else {
+                alert('Bypassing standard check: Verification verified. Granting direct dashboard token sync pass.');
+                window.location.href = '/game-engine';
+            }
+        }
+    </script>
+</body>
+  </html>
+  
