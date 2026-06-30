@@ -14,8 +14,8 @@
         .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
         .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
         .btn-chrome-metallic:hover { transform: translateY(-1px); box-shadow: 0 0 20px rgba(255, 255, 255, 0.25); }
-        .mine-tile { background-color: #2f3d4c; border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
-        .mine-tile:hover { background-color: #3d4f62; transform: scale(1.03); }
+        .grid-tile { background-color: #2f3d4c; border: 1px solid rgba(255, 255, 255, 0.04); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); }
+        .grid-tile:hover { background-color: #3d4f62; transform: scale(1.03); }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
@@ -28,134 +28,45 @@
         <a href="index.html" class="bg-neutral-900 border border-neutral-800 text-neutral-400 font-cyber text-[10px] uppercase tracking-wider px-4 py-2 rounded-lg hover:text-white transition">Lobby View</a>
     </header>
 
-    <main class="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 flex-grow items-stretch mb-6">
+    <!-- SEQUENCE ARRANGED PLATFORM VIEW (CRASH IS TOP RANK #1 NOW) -->
+    <main class="w-full max-w-7xl mx-auto flex flex-col gap-6 mb-6">
         
-        <!-- COMPONENT 1: HIGH-ADVANTAGE MINES BOARD -->
-        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
-            <div>
-                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
-                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">💣 1antix9 Control Mines</h3>
-                    <span id="mines-status-tag" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Staged</span>
+        <!-- ROW 1: RANK #1 - ALGORITHMIC AVIATOR FLIGHT VECTOR (CRASH) -->
+        <div class="bg-[#16202c] chrome-border rounded-2xl p-6 w-full flex flex-col justify-between gap-4">
+            <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-2">
+                <div class="flex items-center gap-2">
+                    <span class="text-xs bg-white text-black font-cyber font-bold px-2 py-0.5 rounded">RANK #1</span>
+                    <h3 class="text-sm font-black font-cyber uppercase tracking-wider text-neutral-300">🛫 1antix9 Target Crash Core</h3>
                 </div>
-                
-                <div class="mb-3 bg-black/40 p-2.5 rounded-lg border border-neutral-800 flex justify-between text-xs font-mono">
-                    <span class="text-neutral-400">Simulated Tile Pool Bet Value:</span>
-                    <span class="text-emerald-400 font-bold">$40.00 / $20.00</span>
-                </div>
-
-                <div id="mines-grid-container" class="bg-[#0b1116] border border-neutral-900 rounded-xl p-3 grid grid-cols-5 gap-2 aspect-square w-full max-w-[280px] mx-auto">
-                    <!-- Cards injection framework -->
-                </div>
+                <span id="aviator-status" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
             </div>
-            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Rearm Controlled Board</button>
+            <div class="bg-[#0b1116] border border-neutral-900 w-full h-56 rounded-xl flex items-center justify-center relative overflow-hidden">
+                <span id="aviator-multiplier" class="text-6xl font-black font-cyber text-white z-10">1.00x</span>
+            </div>
+            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-4 rounded-xl font-cyber text-sm uppercase tracking-widest">Initiate Vector Sweep</button>
         </div>
 
-        <!-- COMPONENT 2: ALGORITHMIC AVIATOR FLIGHT VECTOR -->
-        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
-            <div>
-                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
-                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">🛫 1antix9 Target Crash</h3>
-                    <span id="aviator-status" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
-                </div>
-                <div class="bg-[#0b1116] border border-neutral-900 w-full h-44 rounded-xl flex items-center justify-center relative overflow-hidden">
-                    <span id="aviator-multiplier" class="text-5xl font-black font-cyber text-white z-10">1.00x</span>
-                </div>
-            </div>
-            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Initiate Vector Sweep</button>
-        </div>
-
-        <!-- COMPONENT 3: MATHEMATICAL DICE SYSTEM -->
-        <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
-            <div>
-                <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
-                    <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">🎲 1antix9 Controlled Dice</h3>
-                    <span class="text-[9px] bg-black/40 text-neutral-400 border border-neutral-800 px-2 py-0.5 rounded font-cyber uppercase">Adaptive RNG</span>
-                </div>
-                <div class="bg-[#0b1116] border border-neutral-900 w-full h-32 rounded-xl flex items-center justify-center relative mb-4">
-                    <div id="dice-result-box" class="text-4xl font-black font-cyber text-white">50.00</div>
-                </div>
-                <input type="range" min="2" max="98" value="50" class="w-full accent-white bg-neutral-800 rounded-lg appearance-none h-1.5" id="dice-slider">
-            </div>
-            <button id="btn-roll-dice" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Roll Low-Weight Core</button>
-        </div>
-
-    </main>
-
-    <footer class="w-full max-w-7xl mx-auto border-t border-neutral-900 pt-4 text-center text-xs text-neutral-600 font-mono">
-        1antix9 Infrastructure Engine Layer &bull; Risk Parameters Optimization: Locked
-    </footer>
-
-    <script>
-        // 1. MINES GAME LOGIC (ADAPTIVE REAL-TIME HOUSE WIN TRAP)
-        const grid = document.getElementById('mines-grid-container');
-        const minesStatus = document.getElementById('mines-status-tag');
-        let minePositions = [];
-        let clickedTilesCount = 0;
-        let gameActive = true;
-
-        function buildMinesBoard() {
-            grid.innerHTML = '';
-            minePositions = [];
-            clickedTilesCount = 0;
-            gameActive = true;
-            minesStatus.innerText = "BALANCED RUNTIME";
-            minesStatus.className = "text-[9px] text-emerald-400 font-cyber font-bold uppercase tracking-wider";
-
-            // Inital generic layout mapping placeholders
-            while(minePositions.length < 3) {
-                let r = Math.floor(Math.random() * 25);
-                if(!minePositions.includes(r)) minePositions.push(r);
-            }
-
-            for(let i=0; i<25; i++) {
-                const tile = document.createElement('button');
-                tile.className = "mine-tile rounded-lg aspect-square text-xs font-bold transition-all duration-150";
-                tile.dataset.index = i;
-                
-                tile.addEventListener('click', () => {
-                    if(!gameActive) return;
-                    clickedTilesCount++;
-                    const idx = parseInt(tile.dataset.index);
-
-                    // 🚨 ADAPTIVE FRAUD ACCELERATOR RULE:
-                    // Agar user continuous 3 tiles se zyada select karega (yaani dynamic bet pool risk pe hai),
-                    // toh engine use safely safe passage dene ke bajaye runtime par usi clicked spot ko bomb mein badal dega.
-                    if(clickedTilesCount >= 3 || minePositions.includes(idx)) {
-                        if(!minePositions.includes(idx)) minePositions.push(idx); // Force explode rule inject
-                        tile.innerHTML = "💥";
-                        tile.className = "bg-red-950 border border-red-800 rounded-lg aspect-square flex items-center justify-center scale-95 transition-all";
-                        minesStatus.innerText = "POOL SECURED (HOUSE WIN)";
-                        minesStatus.className = "text-[9px] text-red-500 font-cyber font-bold tracking-wider";
-                        gameActive = false;
-                        revealAllMines();
-                    } else {
-                        tile.innerHTML = "💎";
-                        tile.className = "bg-neutral-950 border border-emerald-500/40 text-emerald-400 rounded-lg aspect-square flex items-center justify-center scale-95 transition-all";
-                    }
-                });
-                grid.appendChild(tile);
-            }
-        }
-
-        function revealAllMines() {
-            const tiles = grid.children;
-            minePositions.forEach(idx => {
-                tiles[idx].innerHTML = "💥";
-                tiles[idx].className = "bg-red-950 border border-red-700 rounded-lg aspect-square flex items-center justify-center";
-            });
-        }
-
-        document.getElementById('btn-reset-mines').addEventListener('click', buildMinesBoard);
-        buildMinesBoard();
-
-        // 2. AVIATOR HIGH-ADVANTAGE MATHEMATICAL SEQUENCE ENGINE
-        let avInterval = null;
-        document.getElementById('btn-aviator-action').addEventListener('click', () => {
-            if (avInterval) clearInterval(avInterval);
-            let count = 1.00;
-            document.getElementById('aviator-status').innerText = "CALCULATING VEIGTHS";
-            document.getElementById('aviator-status').className = "text-[9px] text-yellow-400 font-cyber font-bold tracking-wider animate-pulse";
+        <!-- ROW 2: SIDE-BY-SIDE INTERACTIVE LAYOUT (MINES & CHICKEN) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
             
-            avInterval = setInterval(() => {
-                count += (Math.random() * 0.12);
-        
+            <!-- RANK #2: HIGH-ADVANTAGE MINES BOARD -->
+            <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
+                <div>
+                    <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] bg-neutral-800 text-white font-cyber font-bold px-1.5 py-0.5 rounded">RANK #2</span>
+                            <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-neutral-300">💣 1antix9 Control Mines</h3>
+                        </div>
+                        <span id="mines-status-tag" class="text-[9px] text-neutral-400 font-cyber font-bold uppercase tracking-wider">Staged</span>
+                    </div>
+                    <div id="mines-grid-container" class="bg-[#0b1116] border border-neutral-900 rounded-xl p-3 grid grid-cols-5 gap-2 aspect-square w-full max-w-[260px] mx-auto"></div>
+                </div>
+                <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-3 rounded-xl font-cyber text-xs uppercase tracking-widest">Rearm Mines Board</button>
+            </div>
+
+            <!-- RANK #3: 1ANTIX9 RISK-CONTROLLED CHICKEN GAME -->
+            <div class="bg-[#16202c] chrome-border rounded-2xl p-5 flex flex-col justify-between gap-4">
+                <div>
+                    <div class="flex justify-between items-center border-b border-neutral-800 pb-2 mb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] bg-neutral-800 text-white font-cyber font-bold px-1.5 py-0.5 rounded">RANK #3
