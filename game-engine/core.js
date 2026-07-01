@@ -2,14 +2,14 @@
  * 🌌 1antix9 INFINITYX IQ SUPREME AUTONOMOUS RUNTIME CORE
  * FULLY AUTOMOTIVE SELF-HEALING & ERROR-RESILIENCY ENGINE
  * 
- * Safe Execution Shield wrappers wrapping all dynamic calculation modules parameters
+ * Safe Interception Shield wrapping all dynamic calculation modules parameters
  */
 
 (function() {
     window.AntixSovereignShield = {
         executeSecureLoop: function(targetTaskFunction) {
             try {
-                // High-order interception safety gateway logic execution
+                // High-order absolute try-catch safety gateway loop execution
                 return targetTaskFunction();
             } catch (runtimeExceptionError) {
                 // Programmatic self-healing tracking interception triggered within 1 millisecond
