@@ -1,0 +1,18 @@
+{
+  "short_name": "1antix9",
+  "name": "1antix9 Omniverse Absolute Casino Platform",
+  "icons": [
+    {
+      "src": "https://jsdelivr.net",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/index.html",
+  "background_color": "#000000",
+  "theme_color": "#0f1519",
+  "display": "standalone",
+  "orientation": "portrait",
+  "status_bar": "black-translucent"
+}
