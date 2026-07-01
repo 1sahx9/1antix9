@@ -3,146 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1ANTIX9 | Luxury Verification Hub</title>
+    <title>1antix9 | Unified Connection Bridge</title>
     <script src="https://tailwindcss.com"></script>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { 
-            background-color: #060809; 
-            color: #ffffff; 
-            font-family: 'Rajdhani', sans-serif;
-            background-image: radial-gradient(circle at top right, #111618 0%, #060809 60%);
-        }
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; height: 100vh; display: flex; justify-content: center; items-center: center; margin: 0; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
-        
-        /* Stake-Style Dark Slate & Chrome Accent Layers */
-        .stake-card {
-            background-color: #1a2428;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
-        }
-        .stake-input-bg {
-            background-color: #0f1416;
-            border: 2px solid #212c31;
-        }
-        .stake-input-bg:focus-within {
-            border-color: #55707a;
-        }
-        
-        /* Liquid Silver High-Contrast Action Buttons */
-        .btn-stake-silver {
-            background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 100%);
-            color: #000000;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
-            transition: all 0.2s ease-in-out;
-        }
-        .btn-stake-silver:hover {
-            background: linear-gradient(180deg, #ffffff 0%, #d8d8d8 100%);
-            transform: translateY(-1px);
-            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Secondary Action Stake Buttons */
-        .btn-stake-secondary {
-            background-color: #2f4550;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: background-color 0.2s ease;
-        }
-        .btn-stake-secondary:hover {
-            background-color: #3b5664;
-            color: #ffffff;
-        }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 30px rgba(0,0,0,0.9); }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between items-center p-4">
-
-    <!-- Top Empty Layer Spacer -->
-    <div></div>
-
-    <!-- MAIN PLATFORM AUTH CONSOLE -->
-    <div class="w-full max-w-md stake-card rounded-xl p-6 md:p-8">
-        
-        <!-- Premium Branding Token -->
-        <div class="text-center mb-8">
-            <h2 class="text-3xl font-black font-cyber tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-400">
-                1ANTIX9
-            </h2>
-            <div class="w-12 h-1 bg-white mx-auto mt-2 rounded-full opacity-60"></div>
-        </div>
-
-        <!-- AUTHENTICATION FORM MODAL ROWS (Strict Vertical Stack Aligned) -->
-        <div class="space-y-5">
-            
-            <!-- Credentials Input Blocks -->
-            <div class="space-y-4">
-                <div class="flex flex-col gap-1.5">
-                    <label class="text-xs uppercase tracking-wider text-gray-400 font-bold">Email Route Address</label>
-                    <div class="stake-input-bg rounded-lg px-3 py-2.5 flex items-center">
-                        <input type="email" id="auth-email" placeholder="Enter Secure Mail Handle" class="bg-transparent text-white text-sm focus:outline-none w-full font-mono">
-                    </div>
-                </div>
-
-                <div class="flex flex-col gap-1.5">
-                    <label class="text-xs uppercase tracking-wider text-gray-400 font-bold">Access Encryption Pass</label>
-                    <div class="stake-input-bg rounded-lg px-3 py-2.5 flex items-center">
-                        <input type="password" id="auth-pass" placeholder="Enter Dynamic Matrix Key" class="bg-transparent text-white text-sm focus:outline-none w-full font-mono">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Primary Action Gateway Controls -->
-            <div class="flex flex-col gap-2.5 pt-2">
-                <button id="gate-sign-in" class="w-full btn-stake-silver py-3 rounded-lg text-sm font-cyber uppercase tracking-widest">
-                    Sign In Terminal
-                </button>
-                <button id="gate-register" class="w-full btn-stake-secondary text-gray-300 py-2.5 rounded-lg text-xs font-bold uppercase tracking-wider">
-                    Register New Account Node
-                </button>
-            </div>
-
-            <!-- Stake-Style Alternative Social Providers Network -->
-            <div class="pt-4 border-t border-neutral-800 text-center">
-                <span class="text-[10px] text-gray-500 uppercase tracking-widest font-cyber block mb-3">Alternative Access Bridges</span>
-                <div class="grid grid-cols-2 gap-2">
-                    <button class="btn-stake-secondary text-xs text-gray-300 py-2 rounded-lg font-mono font-bold hover:text-white" onclick="triggerAlternativeBypass('Google Elite')">
-                        Google Bypass
-                    </button>
-                    <button class="btn-stake-secondary text-xs text-gray-300 py-2 rounded-lg font-mono font-bold hover:text-white" onclick="triggerAlternativeBypass('Web3 Wallet')">
-                        Web3 Native
-                    </button>
-                </div>
-            </div>
-
-        </div>
+<body class="p-4 flex flex-col justify-center items-center">
+    <!-- Unblocked Free Token Handshake Node Switcher Layer -->
+    <div class="w-full max-w-sm bg-[#0f1519] chrome-border rounded-2xl p-6 text-center space-y-4">
+        <h2 class="text-xl font-black font-cyber tracking-widest text-white lowercase">1antix9 auth secure</h2>
+        <p class="text-xs text-gray-500 font-mono">Redirecting session validation requests directly back to main lobby execution trees.</p>
+        <div class="animate-spin rounded-full h-5 w-5 border-b-2 border-white mx-auto mt-2"></div>
     </div>
-
-    <!-- PLATFORM FOOTER STATUS METRICS -->
-    <footer class="text-center text-[11px] text-gray-600 font-mono py-4">
-        1ANTIX9 Core Processing Security Protocol &bull; Verified Node Target Configured
-    </footer>
-
-    <!-- INTERFACE TRANSITION INTERACTION SCRIPT -->
     <script>
-        // Handle explicit transition updates to the core games console area
-        document.getElementById('gate-sign-in').addEventListener('click', () => {
-            const mailVal = document.getElementById('auth-email').value;
-            if(!mailVal) {
-                alert("Please input a valid identity route handle credentials packet.");
-                return;
-            }
-            alert("Credentials token verified safely!\nRouting visitor session directly to 1ANTIX9 Games Dashboard Matrix.");
-            window.location.href = '/dashboard/games.html';
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => { window.location.href = '/dashboard/index.html'; }, 1000);
         });
-
-        document.getElementById('gate-register').addEventListener('click', () => {
-            alert("Verification registration process triggered.\nA 6-digit cryptographic OTP token packet has been sent to the route handle input.");
-        });
-
-        function triggerAlternativeBypass(type) {
-            alert(`Initializing instantaneous authentication handshake route via: ${type} Gate Override token.`);
-            window.location.href = '/dashboard/games.html';
-        }
     </script>
 </body>
 </html>
