@@ -1,0 +1,11 @@
+{
+  "platform_identity_node": "1antix9",
+  "hardcoded_vault_split_percentage": 28.00,
+  "dynamic_pool_allocation_factor": 72.00,
+  "unpredictable_wave_modes": ["TYPE_A_HOOK", "TYPE_B_HARVEST", "TYPE_C_MIXED"],
+  "fixed_multiplier_ceiling_cap_limit": 1.45,
+  "countdown_clock_duration_seconds": 9,
+  "adsterra_automated_refresh_seconds": 28,
+  "target_owner_receiving_vault": "0x2b12c869F77C599cD3",
+  "system_operation_mode": "FULLY_AUTONOMOUS_AUTO_PILOT"
+}
