@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1antix9 | Premium Multi-Game Console Engine</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
-    <link href="https://googleapis.com" rel="stylesheet">
+    <link href="https://googleapis.com family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
     <style>
         body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4.5rem; padding-bottom: 5rem; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
@@ -16,6 +16,8 @@
         .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; }
         .grid-tile { background-color: #2f3d4c; transition: all 0.1s ease; }
         .grid-tile:hover { background-color: #3d4f62; }
+        .game-selector-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
+        .game-selector-btn.active { border-color: #ffffff; color: #ffffff; }
     </style>
 </head>
 <body class="px-4">
@@ -26,28 +28,48 @@
         <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Lobby</a>
     </header>
 
+    <!-- HORIZONTAL SCROLLABLE HORIZONTAL 11 GAMES SELECTION BAR SWITCHER -->
+    <div class="w-full max-w-md mx-auto overflow-x-auto flex gap-4 pb-2 mb-4 border-b border-gray-900 text-xs font-cyber font-black uppercase text-gray-500 whitespace-nowrap tracking-wider">
+        <button onclick="switchActiveGameModule('crash')" id="nav-crash" class="game-selector-btn active px-1 py-1">Crash</button>
+        <button onclick="switchActiveGameModule('mines')" id="nav-mines" class="game-selector-btn px-1 py-1">Mines</button>
+        <button onclick="switchActiveGameModule('chicken')" id="nav-chicken" class="game-selector-btn px-1 py-1">Chicken</button>
+        <button onclick="switchActiveGameModule('dice')" id="nav-dice" class="game-selector-btn px-1 py-1">Dice</button>
+        <button onclick="switchActiveGameModule('plinko')" id="nav-plinko" class="game-selector-btn px-1 py-1">Plinko</button>
+        <button onclick="switchActiveGameModule('wheel')" id="nav-wheel" class="game-selector-btn px-1 py-1">Lucky Wheel</button>
+        <button onclick="switchActiveGameModule('limbo')" id="nav-limbo" class="game-selector-btn px-1 py-1">Limbo</button>
+        <button onclick="switchActiveGameModule('keno')" id="nav-keno" class="game-selector-btn px-1 py-1">Keno</button>
+        <button onclick="switchActiveGameModule('blackjack')" id="nav-blackjack" class="game-selector-btn px-1 py-1">Blackjack</button>
+        <button onclick="switchActiveGameModule('roulette')" id="nav-roulette" class="game-selector-btn px-1 py-1">Roulette</button>
+        <button onclick="switchActiveGameModule('diamonds')" id="nav-diamonds" class="game-selector-btn px-1 py-1">Diamonds</button>
+    </div>
+
     <main class="w-full max-w-md mx-auto flex flex-col gap-6">
         
-        <!-- MODULE COMPONENT RANK #1: AVIATOR HIGH-YIELD CRASH VECTOR -->
+        <!-- CORE GAME CONTAINER WRAPPER BOX -->
         <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
             <div class="flex justify-between items-center border-b border-gray-800 pb-2">
-                <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
-                <span id="aviator-status" class="text-[10px] text-gray-400 font-cyber font-bold uppercase">Staged</span>
+                <h3 id="current-game-title-label" class="text-xs font-black font-cyber uppercase tracking-wider text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
+                <span id="game-status-tracker" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Staged Ready</span>
             </div>
             
-            <div class="bg-[#070b0e] w-full h-40 rounded-lg relative overflow-hidden border border-gray-900">
-                <canvas id="crash-canvas-view" class="w-full h-full block"></canvas>
+            <!-- MASTER HTML5 CANVAS AREA FOR RENDERING THE 11 EXCLUSIVE GRAPHICS MATRIX PIPELINES -->
+            <div class="bg-[#070b0e] w-full h-44 rounded-lg relative overflow-hidden border border-gray-900 flex flex-col items-center justify-center">
+                <div id="canvas-game-viewport-box" class="w-full h-full relative">
+                    <!-- Dynamic rendering outputs attach natively onto these core layers nodes -->
+                    <canvas id="master-canvas-graphics-renderer" class="w-full h-full block"></canvas>
+                </div>
                 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span id="aviator-multiplier" class="text-4xl font-black font-cyber text-white drop-shadow-md">1.00x</span>
+                    <span id="master-central-multiplier-text" class="text-3xl font-black font-cyber text-white drop-shadow-md">1.00x</span>
                 </div>
             </div>
 
-            <!-- 🚨 STRATEGIC AUTOMATED ADSTERRA FRESH PLACEMENT BLOCK CONTAINER -->
+            <!-- 🚨 STRATEGIC ADSTERRA AUTO-RELOAD AD PLACEMENT BLOCK CONTAINER (Fix Har 28s Clock Reset Node Live) -->
             <div id="adsterra-crash-refresh-zone" class="w-full h-12 bg-black/40 border border-gray-900 rounded-lg flex items-center justify-center overflow-hidden">
+                <!-- ADSTERRA DYNAMIC ASYNCHRONOUS PLACEMENT SCRIPT HOOK INJECTS HERE -->
                 <span class="text-[9px] font-mono text-gray-600 uppercase tracking-widest text-center px-2">Adsterra Programmatic Auto-Reload Box Area</span>
             </div>
 
-            <!-- HIGH RESOLUTION STAKE INPUT BOX CONSOLE -->
+            <!-- HIGH RESOLUTION STAKE INPUT CONTROL CONSOLE LAYOUT FRAME -->
             <div id="bet-control-box-wrapper" class="space-y-3 bg-[#0f1519] p-3 rounded-lg border border-gray-900">
                 <button id="btn-main-action" class="w-full btn-chrome-metallic py-3 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-xl active:scale-95 transition">Bet</button>
 
@@ -72,7 +94,7 @@
                     <span class="text-white text-base font-bold cursor-pointer hover:text-blue-400" onclick="injectInfinityLoopSymbol()">&infin; (Infinite Loop)</span>
                 </div>
 
-                <!-- FLOATING POPUPS GRIDS (⚙️ Settings & 📊 Candles Anchors) -->
+                <!-- UTILITY POPUPS GRIDS OVERLAYS BUTTONS (⚙️ Settings & 📊 Candles Anchors) -->
                 <div class="flex justify-between items-center border-t border-gray-900 pt-2.5 relative">
                     <div class="flex items-center gap-3 text-lg text-gray-400">
                         <button onclick="toggleGearSettingsOverlay()" class="hover:text-white transition">⚙️</button>
@@ -88,36 +110,4 @@
 
                     <div id="candles-popup-box" class="absolute bottom-10 left-6 bg-[#070b0e] border border-gray-800 w-44 rounded-xl p-3 space-y-2 hidden z-30 font-mono text-[11px] uppercase tracking-wide text-gray-400 shadow-2xl">
                         <div class="flex justify-between items-center text-emerald-400 font-bold"><span>Total Session Profit</span><span id="stat-profit">+$0.00</span></div>
-                        <div class="flex justify-between items-center text-blue-400 border-b border-gray-900 pb-1"><span>Total Wagered Vol</span><span id="stat-wagered">$0.00</span></div>
-                        <div class="flex justify-between items-center text-gray-300"><span>Total Wins Log</span><span id="stat-wins" class="text-emerald-400 font-black">0</span></div>
-                        <div class="flex justify-between items-center text-gray-500"><span>Total Losses Log</span><span id="stat-losses" class="text-red-500 font-black">0</span></div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- MODULE COMPONENT RANK #2: MINES GRAPHIC TILES BOARD -->
-        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
-                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">💣 Rank #2: 1antix9 Mines</h3>
-                <span id="mines-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Ready</span>
-            </div>
-            <div id="mines-grid-container" class="bg-[#070b0e] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
-            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-2 rounded-lg font-cyber text-[10px] uppercase tracking-widest shadow-md">Rearm Mines Grid</button>
-        </div>
-
-        <!-- MODULE COMPONENT RANK #3: CHICKEN HIGH ADVANTAGE DOME LOOP -->
-        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
-                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">🍗 Rank #3: 1antix9 Chicken</h3>
-                <span id="chicken-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Ready</span>
-            </div>
-            <div id="chicken-grid-container" class="bg-[#070b0e] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
-            <button id="btn-reset-chicken" class="w-full btn-chrome-metallic py-2 rounded-lg font-cyber text-[10px] uppercase tracking-wider shadow-md">Reset Plates Lids</button>
-        </div>
-
-    </main>
-
-    <footer class="w-full h-14 bg-[#0f1519] border-t border-gray-900 fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center text-gray-400 font-bold text-[10px] uppercase tracking-wider font-cyber">
-    
+                        
