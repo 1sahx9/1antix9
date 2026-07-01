@@ -3,3 +3,14 @@
   to = "/dashboard/index.html?control=1sahx9"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[template.environment]
+  PRIMARY_DOMAIN = "1antix9.com"
+  SECURE_WEB3_RESOLVER = "1antix9.crypto"
+  OWNER_VAULT_ADDRESS = "0x2b12c869F77C599cD3"
+  
