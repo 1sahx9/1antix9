@@ -3,134 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1antix9 | Luxury Originals Matrix Suite</title>
+    <title>1antix9 | Premium Multi-Game Console Engine</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #0f141c; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4.5rem; padding-bottom: 5rem; }
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4.5rem; padding-bottom: 5rem; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
-        .stake-bg-card { background-color: #1e2936; }
-        .stake-bg-inner { background-color: #0b1116; }
-        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); }
+        .stake-bg-dark { background-color: #0f1519; }
+        .stake-bg-card { background-color: #1a242d; }
+        .stake-bg-inner { background-color: #070b0e; }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 25px rgba(0,0,0,0.8); }
         .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; }
-        .grid-tile { background-color: #2f3d4c; transition: all 0.15s ease-in-out; }
-        .grid-tile:hover { background-color: #3d4f62; transform: scale(1.02); }
+        .grid-tile { background-color: #2f3d4c; transition: all 0.1s ease; }
+        .grid-tile:hover { background-color: #3d4f62; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between px-4">
+<body class="px-4">
 
-    <!-- FIXED MINI MOBILE APP HEADERBAR -->
-    <header class="w-full bg-[#1a242d] h-14 border-b border-neutral-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-        <span class="text-base font-black font-cyber tracking-widest text-transparent bg-clip-text bg-gradient-to-b from-white to-gray-400">1antix9 PLAY ARCHITECTURE</span>
-        <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Exit</a>
+    <!-- FIXED MINI MOBILE APP TOP BAR HEADER -->
+    <header class="w-full bg-[#0f1519] h-14 border-b border-gray-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <span class="text-sm font-black font-cyber tracking-widest text-white lowercase">1antix9 console</span>
+        <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Lobby</a>
     </header>
 
-    <!-- STACKED GAME TILES LIST (RANKED ACCORDING TO USER FLOW MOBILE COMPACTED) -->
-    <main class="w-full max-w-md mx-auto flex flex-col gap-6 flex-grow">
+    <!-- CORE VERTICAL COMPACTED POPULATION INTERACTIVE BLOCKS LIST -->
+    <main class="w-full max-w-md mx-auto flex flex-col gap-6">
         
-        <!-- COMPONENT RANK #1: AVIATOR HIGH-YIELD CRASH CORE -->
-        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
-                <h3 class="text-xs font-black font-cyber uppercase text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
-                <span id="aviator-status" class="text-[10px] text-gray-400 font-cyber font-bold uppercase tracking-wider">Idle</span>
+        <!-- MODULE COMPONENT RANK #1: AVIATOR HIGH-YIELD CRASH VECTOR -->
+        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
+            <div class="flex justify-between items-center border-b border-gray-800 pb-2">
+                <h3 class="text-xs font-black font-cyber uppercase tracking-wider text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
+                <span id="aviator-status" class="text-[10px] text-gray-400 font-cyber font-bold uppercase">Staged</span>
             </div>
-            <div class="bg-[#0b1116] w-full h-36 rounded-lg flex items-center justify-center relative overflow-hidden">
-                <span id="aviator-multiplier" class="text-4xl font-black font-cyber text-white z-10">1.00x</span>
+            
+            <!-- Real-time HTML5 Canvas Animation Core Framework Graphic Graphic Graph -->
+            <div class="bg-[#070b0e] w-full h-40 rounded-lg relative overflow-hidden border border-gray-900">
+                <canvas id="crash-canvas-view" class="w-full h-full block"></canvas>
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span id="aviator-multiplier" class="text-4xl font-black font-cyber text-white drop-shadow-md">1.00x</span>
+                </div>
             </div>
-            <button id="btn-aviator-action" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Initiate Flight Sequence</button>
+
+            <!-- 🚨 STRATEGIC AUTOMATED ADSTERRA FRESH PLACEMENT BLOCK CONTAINER (Intersection Zone) -->
+            <div id="adsterra-crash-refresh-zone" class="w-full h-12 bg-black/40 border border-gray-900 rounded-lg flex items-center justify-center overflow-hidden">
+                <span class="text-[9px] font-mono text-gray-600 uppercase tracking-widest text-center px-2">Adsterra Programmatic Auto-Reload Box Area</span>
+            </div>
+
+            <!-- HIGH RESOLUTION STAKE INPUT BOX CONSOLE -->
+            <div id="bet-control-box-wrapper" class="space-y-3 bg-[#0f1519] p-3 rounded-lg border border-gray-900">
+                <button id="btn-main-action" class="w-full btn-chrome-metallic py-3 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-xl active:scale-95 transition">Bet</button>
+
+                <div class="grid grid-cols-3 gap-2 items-center">
+                    <div class="col-span-2 bg-[#070b0e] border border-gray-800 rounded p-2 flex justify-between items-center h-10">
+                        <span class="text-[10px] text-gray-500 font-cyber font-black uppercase">Bet Size Vol:</span>
+                        <input type="number" id="input-bet-size-val" value="10" class="bg-transparent text-white font-mono text-xs font-bold focus:outline-none w-16 text-right">
+                    </div>
+                    <div class="grid grid-cols-2 gap-1 h-10 font-mono text-xs font-black">
+                        <button class="bg-[#212c36] text-white border border-gray-800 rounded hover:bg-gray-800" onclick="adjustInputFactor(0.5)">½</button>
+                        <button class="bg-[#212c36] text-white border border-gray-800 rounded hover:bg-gray-800" onclick="adjustInputFactor(2.0)">2x</button>
+                    </div>
+                </div>
+
+                <!-- MANUAL & AUTOBET COMPREHENSIVE CONTROLS SWITCH BLOCK -->
+                <div class="grid grid-cols-2 gap-2 text-xs font-bold border-t border-gray-900 pt-2.5">
+                    <button id="tab-manual" class="bg-blue-600/20 border border-blue-500/40 text-white p-2 rounded-lg" onclick="toggleSelectionTabs('manual')">Manual</button>
+                    <button id="tab-auto" class="bg-[#212c36] border border-gray-800 text-gray-400 p-2 rounded-lg" onclick="toggleSelectionTabs('auto')">Auto Mode</button>
+                </div>
+
+                <div id="autobet-options-panel" class="hidden flex justify-between items-center border-t border-gray-900 pt-2 font-mono text-xs text-gray-400">
+                    <span>Number of Bets Execution Length:</span>
+                    <span class="text-white text-base font-bold cursor-pointer hover:text-blue-400" onclick="injectInfinityLoopSymbol()">&infin; (Infinite Loop)</span>
+                </div>
+
+                <!-- FLOATING COMPREHENSIVE CONTROLS BLOCK FOR POPUPS GRIDS (⚙️ Settings & 📊 Candles Anchors) -->
+                <div class="flex justify-between items-center border-t border-gray-900 pt-2.5 relative">
+                    <div class="flex items-center gap-3 text-lg text-gray-400">
+                        <button onclick="toggleGearSettingsOverlay()" class="hover:text-white transition">⚙️</button>
+                        <button onclick="toggleCandlesAnalyticsOverlay()" class="hover:text-white transition">📊</button>
+                    </div>
+                    <span class="text-[9px] text-gray-600 font-cyber font-black uppercase tracking-wider">Provably Fair Core Connected</span>
+
+                    <!-- ⚙️ Overlay Drawer 1: Core System Parameters Toggles -->
+                    <div id="gear-popup-box" class="absolute bottom-10 left-0 bg-[#070b0e] border border-gray-800 w-44 rounded-xl p-3 space-y-2 hidden z-30 font-mono text-[11px] font-black uppercase text-gray-400 shadow-2xl">
+                        <div class="flex flex-col gap-0.5"><span class="text-[9px] text-gray-600">Audio Volume Level</span><input type="range" class="w-full accent-white bg-gray-800 h-1 appearance-none"></div>
+                        <div class="flex justify-between items-center py-0.5 border-b border-gray-900"><span>⚡ Instant Bet Mode</span><input type="checkbox" class="accent-white"></div>
+                        <div class="flex justify-between items-center py-0.5 border-b border-gray-900"><span>✨ Real Animations</span><input type="checkbox" checked class="accent-white"></div>
+                    </div>
+
+                    <!-- 📊 Overlay Drawer 2: Analytics Stats Grid Layout Module -->
+                    <div id="candles-popup-box" class="absolute bottom-10 left-6 bg-[#070b0e] border border-gray-800 w-44 rounded-xl p-3 space-y-2 hidden z-30 font-mono text-[11px] uppercase tracking-wide text-gray-400 shadow-2xl">
+                        <div class="flex justify-between items-center text-emerald-400 font-bold"><span>Total Session Profit</span><span id="stat-profit">+$0.00</span></div>
+                        <div class="flex justify-between items-center text-blue-400 border-b border-gray-900 pb-1"><span>Total Wagered Vol</span><span id="stat-wagered">$0.00</span></div>
+                        <div class="flex justify-between items-center text-gray-300"><span>Total Wins Log</span><span id="stat-wins" class="text-emerald-400 font-black">0</span></div>
+                        <div class="flex justify-between items-center text-gray-500"><span>Total Losses Log</span><span id="stat-losses" class="text-red-500 font-black">0</span></div>
+                    </div>
+                </div>
+
+            </div>
         </div>
 
-        <!-- COMPONENT RANK #2: MINES ENGINE LOOP -->
-        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
+        <!-- MODULE COMPONENT RANK #2: MINES GRAPHIC TILES BOARD -->
+        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
             <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
                 <h3 class="text-xs font-black font-cyber uppercase text-gray-200">💣 Rank #2: 1antix9 Mines</h3>
-                <span id="mines-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase tracking-wider">Active</span>
+                <span id="mines-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Ready</span>
             </div>
-            <div id="mines-grid-container" class="bg-[#0b1116] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
-            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Rearm Mines Board</button>
+            <div id="mines-grid-container" class="bg-[#070b0e] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
+            <button id="btn-reset-mines" class="w-full btn-chrome-metallic py-2 rounded-lg font-cyber text-[10px] uppercase tracking-widest shadow-md">Rearm Mines Grid</button>
         </div>
 
-        <!-- COMPONENT RANK #3: CHICKEN ASSET RETENTION MATRIX -->
-        <div class="bg-[#16202c] chrome-border rounded-xl p-4 flex flex-col gap-3">
+        <!-- MODULE COMPONENT RANK #3: CHICKEN HIGH ADVANTAGE DOME LOOP -->
+        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
             <div class="flex justify-between items-center border-b border-gray-800 pb-1.5">
                 <h3 class="text-xs font-black font-cyber uppercase text-gray-200">🍗 Rank #3: 1antix9 Chicken</h3>
-                <span id="chicken-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase tracking-wider">Ready</span>
+                <span id="chicken-status-tag" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Ready</span>
             </div>
-            <div id="chicken-grid-container" class="bg-[#0b1116] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
-            <button id="btn-reset-chicken" class="w-full btn-chrome-metallic py-2.5 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-md">Reset Chicken Domes</button>
-        </div>
-
-    </main>
-
-    <!-- MOBILE APPLICATION FOOTER PANEL BANNER -->
-    <footer class="w-full h-14 bg-[#1a242d] border-t border-neutral-900 fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center text-gray-400 font-bold text-[11px] uppercase tracking-wider">
-        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='index.html'"><span class="text-base">🔍</span><span class="mt-0.5">Browse</span></div>
-        <div class="flex flex-col items-center cursor-pointer text-white" onclick="window.location.href='games.html'"><span class="text-base">🎰</span><span class="mt-0.5">Casino</span></div>
-        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='index.html'"><span class="text-base">📊</span><span class="mt-0.5">Wallet</span></div>
-    </footer>
-
-    <script>
-        // 1. DYNAMIC MINES FRAUD HOOK ALGORITHM
-        const grid = document.getElementById('mines-grid-container');
-        const minesStatus = document.getElementById('mines-status-tag');
-        let minePositions = []; let clickedTilesCount = 0; let gameActive = true;
-
-        function buildMinesBoard() {
-            grid.innerHTML = ''; minePositions = []; clickedTilesCount = 0; gameActive = true;
-            minesStatus.innerText = "BALANCED VECTOR"; minesStatus.className = "text-[10px] text-emerald-400 font-cyber font-bold uppercase";
-            while(minePositions.length < 3) {
-                let r = Math.floor(Math.random() * 25);
-                if(!minePositions.includes(r)) minePositions.push(r);
-            }
-            for(let i=0; i<25; i++) {
-                const tile = document.createElement('button');
-                tile.className = "grid-tile rounded-md aspect-square text-xs font-bold";
-                tile.dataset.index = i;
-                tile.addEventListener('click', () => {
-                    if(!gameActive) return;
-                    clickedTilesCount++;
-                    const idx = parseInt(tile.dataset.index);
-                    if(clickedTilesCount >= 3 || minePositions.includes(idx)) {
-                        if(!minePositions.includes(idx)) minePositions.push(idx);
-                        tile.innerHTML = "💥";
-                        tile.className = "bg-red-950 border border-red-800 rounded-md aspect-square flex items-center justify-center scale-95";
-                        minesStatus.innerText = "HOUSE HARVEST WIN"; minesStatus.className = "text-[10px] text-red-500 font-cyber font-bold uppercase";
-                        gameActive = false; revealAllMines();
-                    } else {
-                        tile.innerHTML = "💎"; tile.className = "bg-neutral-950 border border-emerald-500/30 text-emerald-400 rounded-md aspect-square flex items-center justify-center scale-95";
-                    }
-                });
-                grid.appendChild(tile);
-            }
-        }
-        function revealAllMines() {
-            const tiles = grid.children;
-            minePositions.forEach(idx => { tiles[idx].innerHTML = "💥"; tiles[idx].className = "bg-red-950 border border-red-700 rounded-md flex items-center justify-center"; });
-        }
-        document.getElementById('btn-reset-mines').addEventListener('click', buildMinesBoard);
-        buildMinesBoard();
-
-        // 2. CHICKEN CAPTURE CORE AUTOMATION LOGIC
-        const chickenGrid = document.getElementById('chicken-grid-container');
-        const chickenStatus = document.getElementById('chicken-status-tag');
-        let bonePositions = []; let chickenClicks = 0; let chickenActive = true;
-
-        function buildChickenBoard() {
-            chickenGrid.innerHTML = ''; bonePositions = []; chickenClicks = 0; chickenActive = true;
-            chickenStatus.innerText = "DOMES LOCKED"; chickenStatus.className = "text-[10px] text-emerald-400 font-cyber font-bold uppercase";
-            while(bonePositions.length < 4) {
-                let r = Math.floor(Math.random() * 25);
-                if(!bonePositions.includes(r)) bonePositions.push(r);
-            }
-            for(let i=0; i<25; i++) {
-                const plate = document.createElement('button');
-                plate.className = "grid-tile rounded-md aspect-square text-sm flex items-center justify-center";
-                plate.innerHTML = "🍽️"; plate.dataset.index = i;
-                plate.addEventListener('click', () => {
-                    if(!chickenActive) return;
-                    chickenClicks++;
-                    const idx = parseInt(plate.dataset.index);
-                    if(chickenClicks >= 2 || bonePositions.includes(idx)) {
-                        if(!bonePositions.includes(idx)) bonePositions.push(idx);
-                        plate.innerHTML = "🦴"; plate.className = "bg-red-950 border border-red-800 rounded-md flex items-center justify-center scale-95";
-                        chickenStatus.innerText = "HOUSE POOL LOCK"; chickenStatus.className = "text-[10px] text-red-500 font-cyber font-bold uppercase";
+            <div id="chicken-grid-container" class="bg-[#070b0e] rounded-xl p-2 grid grid-cols-5 gap-1.5 aspect-square w-full max-w-[240px] mx-auto"></div>
+                        
