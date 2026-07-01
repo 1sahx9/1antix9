@@ -4,58 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1antix9 | Omniverse VIP Club</title>
-    <script src="https://tailwindcss.com"></script>
+    <link href="https://jsdelivr.net" rel="stylesheet">
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        body { background-color: #06090c; color: #ffffff; font-family: 'Rajdhani', sans-serif; background-image: radial-gradient(circle at center, #141c24 0%, #06090c 100%); }
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4rem; padding-bottom: 5rem; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
-        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.08); box-shadow: 0 4px 40px rgba(0, 0, 0, 0.6); }
-        .premium-silver-gradient { background: linear-gradient(135deg, #2e3b4e 0%, #11171d 100%); }
+        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.9); }
+        .premium-silver-gradient { background: linear-gradient(135deg, #16202c 0%, #070b0e 100%); }
         .liquid-silver-text { background: linear-gradient(180deg, #ffffff 10%, #cccccc 50%, #777777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between p-4 md:p-8">
+<body class="min-h-screen flex flex-col justify-between px-4">
 
-    <!-- UPPER NAVIGATION CONTROL BAR -->
-    <header class="w-full max-w-7xl mx-auto flex justify-between items-center border-b border-neutral-900 pb-4 mb-8">
-        <div>
-            <h1 class="text-3xl font-black font-cyber tracking-widest liquid-silver-text">1antix9 VIP CLUB</h1>
-            <p class="text-[10px] text-neutral-500 uppercase tracking-widest font-cyber">Elite Loyalty Progression Matrix</p>
-        </div>
-        <a href="index.html" class="bg-neutral-900 border border-neutral-800 text-neutral-400 font-cyber text-[10px] uppercase tracking-wider px-4 py-2 rounded-lg hover:text-white transition">Lobby Terminal</a>
+    <!-- FIXED MINI MOBILE APP VIP HEADER -->
+    <header class="w-full bg-[#0f1519] h-14 border-b border-gray-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
+        <span class="text-sm font-black font-cyber tracking-widest liquid-silver-text lowercase">1antix9 vip club</span>
+        <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Return Hub</a>
     </header>
 
-    <!-- VIP STATS TRACKER LAYER -->
-    <main class="w-full max-w-7xl mx-auto flex-grow grid grid-cols-1 md:grid-cols-3 gap-6 items-center mb-8">
+    <!-- VIP STATS TRACKER LAYER (AUTOMATED PROGRESS LOG MATRIX) -->
+    <main class="w-full max-w-md mx-auto flex flex-col gap-5 flex-grow justify-center">
         
-        <!-- CARD 1: PLATINUM REBATES -->
-        <div class="premium-silver-gradient chrome-border rounded-2xl p-6 text-center">
-            <span class="text-xs text-neutral-400 font-cyber uppercase tracking-wider block mb-2">Current Tier Status</span>
-            <span class="text-3xl font-black font-cyber text-white tracking-widest">1antix9 ELITE CHROME</span>
-            <div class="w-full bg-black/40 h-2 rounded-full overflow-hidden mt-4 border border-neutral-800">
-                <div class="bg-white h-full w-[28%]"></div>
+        <!-- CARD 1: PLATINUM REBATES BRACKET -->
+        <div class="premium-silver-gradient chrome-border rounded-xl p-5 text-center">
+            <span class="text-[11px] text-gray-400 font-cyber uppercase tracking-wider block mb-1">Active VIP Tier Status</span>
+            <span class="text-xl font-black font-cyber text-white tracking-widest lowercase">1antix9 elite chrome</span>
+            <div class="w-full bg-black/40 h-2 rounded-full overflow-hidden mt-3 border border-gray-800">
+                <div class="bg-gradient-to-r from-gray-400 to-white h-full w-[28%]"></div>
             </div>
-            <p class="text-[11px] text-neutral-500 font-mono mt-2">Next Tier Milestone Progress: 28% Clear</p>
+            <p class="text-[10px] text-gray-500 font-mono mt-1.5 uppercase">Next Tier Milestone Progress: 28% Authenticated</p>
         </div>
 
-        <!-- CARD 2: TOTAL BONUS RECOVERED -->
-        <div class="bg-neutral-950/60 chrome-border rounded-2xl p-6 text-center">
-            <span class="text-xs text-neutral-400 font-cyber uppercase tracking-wider block mb-1">Weekly Rakback Allocation</span>
-            <span class="text-4xl font-black font-cyber text-emerald-400">0.00 USDT</span>
-            <p class="text-[10px] text-neutral-500 mt-2 font-mono">Dynamic 28% Platform Governance Safety Hook Matrix</p>
-        </div>
-
-        <!-- CARD 3: SECRET VAULT ENTRY -->
-        <div class="bg-neutral-950/60 chrome-border rounded-2xl p-6 text-center">
-            <span class="text-xs text-neutral-400 font-cyber uppercase tracking-wider block mb-1">VIP VIP Lounge Pass ID</span>
-            <span class="text-xl font-mono text-white block truncate mt-3">VIP-1antix9-NODE-777</span>
-            <p class="text-[10px] text-neutral-500 mt-2 font-mono">Cryptographically Linked Straight to Your Connected Wallet Address</p>
+        <!-- CARD 2: REAL-TIME SECURE ACCOUNT SAFE INFO -->
+        <div class="bg-[#0f1519] chrome-border rounded-xl p-4 space-y-3 font-mono text-xs">
+            <div class="flex justify-between items-center border-b border-gray-900 pb-2">
+                <span class="text-gray-500">[🔐 ACCOUNT HANDLE]:</span>
+                <span id="vip-user-handle" class="text-white font-bold font-cyber">1antix9_player</span>
+            </div>
+            <div class="flex justify-between items-center border-b border-gray-900 pb-2">
+                <span class="text-gray-500">[🪙 WEEKLY RAKEBACK]:</span>
+                <span class="text-emerald-400 font-bold">$0.00 USDT</span>
+            </div>
+            <div class="flex justify-between items-center">
+                <span class="text-gray-500">[🛡️ PLATFORM STATUS]:</span>
+                <span class="text-emerald-500 font-cyber font-black uppercase text-[10px]">&bull; SOVEREIGN NODE ONLINE</span>
+            </div>
         </div>
 
     </main>
 
-    <footer class="w-full max-w-7xl mx-auto text-center font-mono text-xs text-neutral-600 border-t border-neutral-900 pt-4">
-        &copy; 2026 1antix9 Loyalty Operations. Verified Member Database Protocol Engine.
+    <!-- FIXED MINI BOTTOM NAV BAR -->
+    <footer class="w-full h-14 bg-[#0f1519] border-t border-gray-900 fixed bottom-0 left-0 right-0 z-50 flex justify-around items-center text-gray-400 font-bold text-[10px] uppercase font-cyber tracking-wider">
+        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='index.html'"><span>🔍</span><span class="mt-0.5">Browse</span></div>
+        <div class="flex flex-col items-center cursor-pointer" onclick="window.location.href='games.html'"><span>🎰</span><span class="mt-0.5">Casino</span></div>
+        <div class="flex flex-col items-center cursor-pointer text-white" onclick="window.location.href='vip.html'"><span>💎</span><span class="mt-0.5">VIP VIP</span></div>
     </footer>
 
 </body>
