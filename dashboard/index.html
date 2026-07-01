@@ -22,11 +22,11 @@
         .wallet-item-node:hover { background-color: #1a242d; border-color: rgba(255,255,255,0.08); }
         ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-thumb { background: #212c36; border-radius: 10px; }
-        .payment-tab-active { background: rgba(255,255,255,0.15); border-color: #ffffff; color: #ffffff; }
     </style>
 </head>
 <body>
 
+    <!-- INTERACTIVE WEBGL BACKGROUND CANVAS LAYER -->
     <canvas id="canvas-bg"></canvas>
 
     <!-- FIXED APPLICATION TOP HEADERBAR -->
@@ -36,23 +36,29 @@
         </div>
         
         <div class="flex items-center gap-2">
+            <!-- Global Aggregate Balance Display Widget Selector -->
             <div id="main-balance-widget" class="flex items-center stake-bg-inner border border-gray-800 rounded-lg p-1.5 h-10 cursor-pointer" onclick="togglePortfolioDropdown()">
                 <span id="top-balance-symbol" class="text-gray-400 font-black font-cyber text-[11px] px-1 uppercase tracking-wider">ALL</span>
-                <span id="top-balance-number" class="text-xs text-white font-mono font-bold px-1">145.85</span>
+                <span id="top-balance-number" class="text-xs text-white font-mono font-bold px-1">0.00</span>
                 <span class="text-[10px] text-gray-500 px-0.5">&#9662;</span>
             </div>
+            
+            <!-- Silver Brushed Portfolio/Wallet Master Action Anchor -->
             <div class="w-10 h-10 bg-gradient-to-b from-gray-200 via-gray-400 to-gray-600 rounded-lg flex items-center justify-center cursor-pointer shadow-lg active:scale-95 transition" onclick="togglePortfolioDropdown()">
                 <span class="text-base filter brightness-0">💼</span>
             </div>
+            
+            <!-- User Avatar Anchor Redirect node -->
             <div class="w-10 h-10 bg-[#212c36] border border-gray-800 rounded-lg flex items-center justify-center cursor-pointer" onclick="triggerDirectWalletConnectGate()">
                 <span class="text-sm">👤</span>
             </div>
         </div>
     </nav>
 
-    <!-- CENTRAL WORKSPACE PANEL VIEW BODY (STRICTLY 11 ORIGINALS ONLY) -->
+    <!-- CENTRAL WORKSPACE PANEL VIEW BODY -->
     <main id="main-casino-lobby-view" class="w-full max-w-md mx-auto px-4 flex flex-col gap-5 mt-2">
         
+        <!-- THE VIP LOYALTY BRACKET MODULE CARD -->
         <div class="stake-bg-card luxury-card-border rounded-xl p-4 flex flex-col gap-2 bg-[#1a242d]/90 backdrop-blur-sm">
             <div class="flex justify-between items-center">
                 <span class="text-sm font-black font-cyber tracking-wider text-white lowercase">1antix9 &gt;</span>
@@ -67,6 +73,7 @@
             </div>
         </div>
 
+        <!-- TWO CONTINUOUS AUTOMATED TELEMETRY HUD DATA FEED BOARDS -->
         <div class="grid grid-cols-2 gap-3">
             <div class="stake-bg-inner border border-gray-900 rounded-xl p-3 h-28 overflow-hidden relative">
                 <span class="text-[9px] font-cyber text-gray-500 block border-b border-gray-900 pb-1 mb-1 uppercase font-black tracking-wider">⚡ Live Active Bets</span>
@@ -78,23 +85,57 @@
             </div>
         </div>
 
+        <!-- 🚨 ADSTERRA PROGRAMMATIC REVENUE ACCELERATOR SLOT PLACEMENT #1 -->
         <div id="adsterra-lobby-banner" class="w-full bg-[#0f1519] border border-gray-900 rounded-xl h-16 flex items-center justify-center text-center relative overflow-hidden">
             <span class="text-[10px] font-mono text-gray-600 uppercase tracking-widest">Adsterra Dynamic Revenue Loop Stream Placeholder</span>
         </div>
 
+        <!-- HIGH STATUS INDEPENDENT ORIGINALS GAMES CATALOG SECTOR -->
         <div>
             <h4 class="text-xs font-black font-cyber uppercase text-gray-400 tracking-wider mb-3 flex items-center gap-1">
-                <span class="w-1.5 h-1.5 bg-white rounded-full"></span> 1antix9 11 Deployed Originals Cluster
+                <span class="w-1.5 h-1.5 bg-white rounded-full"></span> 1antix9 Originals Hub
             </h4>
             
             <div class="grid grid-cols-2 gap-3">
-                <a href="games.html?game=crash" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-red-950/20 to-neutral-900 flex items-center justify-center text-3xl">🛫</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Crash</span></div></a>
-                <a href="games.html?game=mines" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-blue-950/20 to-neutral-900 flex items-center justify-center text-3xl">💣</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Mines</span></div></a>
-                <a href="games.html?game=chicken" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-amber-950/20 to-neutral-900 flex items-center justify-center text-3xl">🍗</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Chicken</span></div></a>
-                <a href="games.html?game=dice" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-purple-950/20 to-neutral-900 flex items-center justify-center text-3xl">🎲</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Dice</span></div></a>
-                <a href="games.html?game=plinko" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-emerald-950/20 to-neutral-900 flex items-center justify-center text-3xl">🟢</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Plinko</span></div></a>
-                <a href="games.html?game=wheel" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-yellow-950/20 to-neutral-900 flex items-center justify-center text-3xl">🎡</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Lucky Wheel</span></div></a>
-                <a href="games.html?game=limbo" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-neutral-900 flex items-center justify-center text-3xl">📉</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Limbo</span></div></a>
-                <a href="games.html?game=keno" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-neutral-900 flex items-center justify-center text-3xl">🎟️</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Keno</span></div></a>
-                <a href="games.html?game=blackjack" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-neutral-900 flex items-center justify-center text-3xl">♠️</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Blackjack</span></div></a>
-                                                                                                                                                                                                                                                                                                                                    
+                <!-- Rank #1: Crash -->
+                <a href="games.html?game=crash" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80">
+                    <div class="h-24 bg-gradient-to-b from-red-950/20 to-neutral-900 flex items-center justify-center text-3xl">🛫</div>
+                    <div class="p-2 text-center bg-black/20 border-t border-gray-900">
+                        <span class="text-xs font-bold font-cyber text-gray-200 block">Crash</span>
+                        <span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 6,491 active</span>
+                    </div>
+                </a>
+                <!-- Rank #2: Mines -->
+                <a href="games.html?game=mines" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80">
+                    <div class="h-24 bg-gradient-to-b from-blue-950/20 to-neutral-900 flex items-center justify-center text-3xl">💣</div>
+                    <div class="p-2 text-center bg-black/20 border-t border-gray-900">
+                        <span class="text-xs font-bold font-cyber text-gray-200 block">Mines</span>
+                        <span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 4,102 active</span>
+                    </div>
+                </a>
+                <!-- Rank #3: Chicken -->
+                <a href="games.html?game=chicken" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80">
+                    <div class="h-24 bg-gradient-to-b from-amber-950/20 to-neutral-900 flex items-center justify-center text-3xl">🍗</div>
+                    <div class="p-2 text-center bg-black/20 border-t border-gray-900">
+                        <span class="text-xs font-bold font-cyber text-gray-200 block">Chicken</span>
+                        <span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 3,927 active</span>
+                    </div>
+                </a>
+                <!-- Rank #4: Dice -->
+                <a href="games.html?game=dice" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80">
+                    <div class="h-24 bg-gradient-to-b from-purple-950/20 to-neutral-900 flex items-center justify-center text-3xl">🎲</div>
+                    <div class="p-2 text-center bg-black/20 border-t border-gray-900">
+                        <span class="text-xs font-bold font-cyber text-gray-200 block">Dice</span>
+                        <span class="text-[9px] text-gray-500 font-mono block mt-0.5">&bull; 1,154 playing</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- FLOATING MULTI-ASSET PORTFOLIO DRAWER PANEL OVERLAY -->
+    <div id="portfolio-dropdown-drawer" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm hidden">
+        <div class="w-full max-w-sm stake-bg-card luxury-card-border rounded-2xl flex flex-col h-[460px] overflow-hidden">
+            
+            <!-- 3 ANALYTICS COUNTERS BLOCKS -->
+            
