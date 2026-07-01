@@ -3,111 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1antix9 | Premium Multi-Game Console Engine</title>
+    <title>1antix9 | Omniverse Deep Obsidian Casino</title>
     <link href="https://jsdelivr.net" rel="stylesheet">
-    <link href="https://googleapis.com family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="manifest" href="/manifest.json">
     <style>
-        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; padding-top: 4.5rem; padding-bottom: 5rem; }
+        body { background-color: #000000; color: #ffffff; font-family: 'Rajdhani', sans-serif; overflow-x: hidden; padding-top: 4.5rem; padding-bottom: 4.5rem; }
         .font-cyber { font-family: 'Orbitron', sans-serif; }
         .stake-bg-dark { background-color: #0f1519; }
         .stake-bg-card { background-color: #1a242d; }
         .stake-bg-inner { background-color: #070b0e; }
-        .chrome-border { border: 1px solid rgba(255, 255, 255, 0.06); box-shadow: 0 4px 25px rgba(0,0,0,0.8); }
+        .liquid-silver-text { background: linear-gradient(180deg, #ffffff 10%, #cccccc 50%, #777777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .btn-chrome-metallic { background: linear-gradient(180deg, #ffffff 0%, #c0c0c0 45%, #707070 100%); color: #000000; font-weight: 900; }
-        .grid-tile { background-color: #2f3d4c; transition: all 0.1s ease; }
-        .grid-tile:hover { background-color: #3d4f62; }
-        .game-selector-btn { border-bottom: 2px solid transparent; transition: all 0.2s; }
-        .game-selector-btn.active { border-color: #ffffff; color: #ffffff; }
+        .luxury-card-border { border: 1px solid rgba(255, 255, 255, 0.05); box-shadow: 0 4px 30px rgba(0,0,0,0.9); }
+        #canvas-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; }
+        .coin-row { border-bottom: 1px solid rgba(255,255,255,0.02); transition: all 0.2s; }
+        .coin-row:hover { background-color: rgba(255,255,255,0.02); }
+        .wallet-item-node { transition: all 0.15s ease; border: 1px solid transparent; }
+        .wallet-item-node:hover { background-color: #1a242d; border-color: rgba(255,255,255,0.08); }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-thumb { background: #212c36; border-radius: 10px; }
     </style>
 </head>
-<body class="px-4">
+<body>
 
-    <!-- FIXED MINI MOBILE APP TOP BAR HEADER -->
-    <header class="w-full bg-[#0f1519] h-14 border-b border-gray-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-        <span class="text-sm font-black font-cyber tracking-widest text-white lowercase">1antix9 console</span>
-        <a href="index.html" class="text-xs font-bold text-gray-400 hover:text-white">&larr; Lobby</a>
-    </header>
+    <!-- INTERACTIVE WEBGL BACKGROUND CANVAS LAYER -->
+    <canvas id="canvas-bg"></canvas>
 
-    <!-- HORIZONTAL SCROLLABLE HORIZONTAL 11 GAMES SELECTION BAR SWITCHER -->
-    <div class="w-full max-w-md mx-auto overflow-x-auto flex gap-4 pb-2 mb-4 border-b border-gray-900 text-xs font-cyber font-black uppercase text-gray-500 whitespace-nowrap tracking-wider">
-        <button onclick="switchActiveGameModule('crash')" id="nav-crash" class="game-selector-btn active px-1 py-1">Crash</button>
-        <button onclick="switchActiveGameModule('mines')" id="nav-mines" class="game-selector-btn px-1 py-1">Mines</button>
-        <button onclick="switchActiveGameModule('chicken')" id="nav-chicken" class="game-selector-btn px-1 py-1">Chicken</button>
-        <button onclick="switchActiveGameModule('dice')" id="nav-dice" class="game-selector-btn px-1 py-1">Dice</button>
-        <button onclick="switchActiveGameModule('plinko')" id="nav-plinko" class="game-selector-btn px-1 py-1">Plinko</button>
-        <button onclick="switchActiveGameModule('wheel')" id="nav-wheel" class="game-selector-btn px-1 py-1">Lucky Wheel</button>
-        <button onclick="switchActiveGameModule('limbo')" id="nav-limbo" class="game-selector-btn px-1 py-1">Limbo</button>
-        <button onclick="switchActiveGameModule('keno')" id="nav-keno" class="game-selector-btn px-1 py-1">Keno</button>
-        <button onclick="switchActiveGameModule('blackjack')" id="nav-blackjack" class="game-selector-btn px-1 py-1">Blackjack</button>
-        <button onclick="switchActiveGameModule('roulette')" id="nav-roulette" class="game-selector-btn px-1 py-1">Roulette</button>
-        <button onclick="switchActiveGameModule('diamonds')" id="nav-diamonds" class="game-selector-btn px-1 py-1">Diamonds</button>
-    </div>
-
-    <main class="w-full max-w-md mx-auto flex flex-col gap-6">
+    <!-- FIXED APPLICATION TOP HEADERBAR -->
+    <nav class="w-full h-16 bg-[#0f1519]/95 border-b border-gray-900 px-4 flex justify-between items-center fixed top-0 left-0 right-0 z-50 backdrop-blur-md">
+        <div class="flex items-center gap-2">
+            <span class="text-xl font-black font-cyber tracking-widest liquid-silver-text lowercase">1antix9</span>
+        </div>
         
-        <!-- CORE GAME CONTAINER WRAPPER BOX -->
-        <div class="bg-[#1a242d] chrome-border rounded-xl p-4 flex flex-col gap-3">
-            <div class="flex justify-between items-center border-b border-gray-800 pb-2">
-                <h3 id="current-game-title-label" class="text-xs font-black font-cyber uppercase tracking-wider text-gray-200">🛫 Rank #1: 1antix9 Crash</h3>
-                <span id="game-status-tracker" class="text-[10px] text-emerald-400 font-cyber font-bold uppercase">Staged Ready</span>
+        <div class="flex items-center gap-2">
+            <div id="main-balance-widget" class="flex items-center stake-bg-inner border border-gray-800 rounded-lg p-1.5 h-10 cursor-pointer" onclick="togglePortfolioDropdown()">
+                <span id="top-balance-symbol" class="text-gray-400 font-black font-cyber text-[11px] px-1 uppercase tracking-wider">ALL</span>
+                <span id="top-balance-number" class="text-xs text-white font-mono font-bold px-1">0.00</span>
+                <span class="text-[10px] text-gray-500 px-0.5">&#9662;</span>
             </div>
             
-            <!-- MASTER HTML5 CANVAS AREA FOR RENDERING THE 11 EXCLUSIVE GRAPHICS MATRIX PIPELINES -->
-            <div class="bg-[#070b0e] w-full h-44 rounded-lg relative overflow-hidden border border-gray-900 flex flex-col items-center justify-center">
-                <div id="canvas-game-viewport-box" class="w-full h-full relative">
-                    <!-- Dynamic rendering outputs attach natively onto these core layers nodes -->
-                    <canvas id="master-canvas-graphics-renderer" class="w-full h-full block"></canvas>
-                </div>
-                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span id="master-central-multiplier-text" class="text-3xl font-black font-cyber text-white drop-shadow-md">1.00x</span>
-                </div>
+            <div class="w-10 h-10 bg-gradient-to-b from-gray-200 via-gray-400 to-gray-600 rounded-lg flex items-center justify-center cursor-pointer shadow-lg active:scale-95 transition" onclick="togglePortfolioDropdown()">
+                <span class="text-base filter brightness-0">💼</span>
             </div>
-
-            <!-- 🚨 STRATEGIC ADSTERRA AUTO-RELOAD AD PLACEMENT BLOCK CONTAINER (Fix Har 28s Clock Reset Node Live) -->
-            <div id="adsterra-crash-refresh-zone" class="w-full h-12 bg-black/40 border border-gray-900 rounded-lg flex items-center justify-center overflow-hidden">
-                <!-- ADSTERRA DYNAMIC ASYNCHRONOUS PLACEMENT SCRIPT HOOK INJECTS HERE -->
-                <span class="text-[9px] font-mono text-gray-600 uppercase tracking-widest text-center px-2">Adsterra Programmatic Auto-Reload Box Area</span>
+            
+            <div id="user-avatar-btn" class="w-10 h-10 bg-[#212c36] border border-gray-800 rounded-lg flex items-center justify-center cursor-pointer text-xs font-bold font-mono tracking-tighter truncate text-gray-400" onclick="triggerDirectWalletConnectGate()">
+                <span>👤</span>
             </div>
+        </div>
+    </nav>
 
-            <!-- HIGH RESOLUTION STAKE INPUT CONTROL CONSOLE LAYOUT FRAME -->
-            <div id="bet-control-box-wrapper" class="space-y-3 bg-[#0f1519] p-3 rounded-lg border border-gray-900">
-                <button id="btn-main-action" class="w-full btn-chrome-metallic py-3 rounded-lg font-cyber text-xs uppercase tracking-widest shadow-xl active:scale-95 transition">Bet</button>
+    <!-- CENTRAL WORKSPACE PANEL VIEW BODY -->
+    <main id="main-casino-lobby-view" class="w-full max-w-md mx-auto px-4 flex flex-col gap-5 mt-2">
+        
+        <!-- PWA INSTANT MOBILE APP NATIVE INSTALLATION PROMPT OVERLAY STRIP -->
+        <div id="pwa-install-app-banner-strip" class="hidden stake-bg-card border border-gray-800 p-3 rounded-xl flex justify-between items-center bg-gradient-to-r from-gray-900 via-[#1a242d] to-black shadow-2xl">
+            <div class="flex items-center gap-2.5">
+                <span class="text-xl">📲</span>
+                <div class="flex flex-col"><span class="text-xs font-cyber font-black tracking-wider text-white">Install 1antix9 App</span><span class="text-[10px] text-gray-400 font-mono">Bullet-speed zero visual lag standalone execution</span></div>
+            </div>
+            <button id="btn-pwa-install-trigger" class="btn-chrome-metallic px-3 py-1.5 rounded-lg text-[10px] font-cyber uppercase tracking-widest active:scale-95 transition">Install</button>
+        </div>
 
-                <div class="grid grid-cols-3 gap-2 items-center">
-                    <div class="col-span-2 bg-[#070b0e] border border-gray-800 rounded p-2 flex justify-between items-center h-10">
-                        <span class="text-[10px] text-gray-500 font-cyber font-black uppercase">Bet Size Vol:</span>
-                        <input type="number" id="input-bet-size-val" value="10" class="bg-transparent text-white font-mono text-xs font-bold focus:outline-none w-16 text-right">
-                    </div>
-                    <div class="grid grid-cols-2 gap-1 h-10 font-mono text-xs font-black">
-                        <button class="bg-[#212c36] text-white border border-gray-800 rounded hover:bg-gray-800" onclick="adjustInputFactor(0.5)">½</button>
-                        <button class="bg-[#212c36] text-white border border-gray-800 rounded hover:bg-gray-800" onclick="adjustInputFactor(2.0)">2x</button>
-                    </div>
-                </div>
+        <div class="stake-bg-card luxury-card-border rounded-xl p-4 flex flex-col gap-2 bg-[#1a242d]/90 backdrop-blur-sm">
+            <div class="flex justify-between items-center">
+                <span class="text-sm font-black font-cyber tracking-wider text-white lowercase">1antix9 &gt;</span>
+                <span class="text-xs font-mono font-bold text-amber-400">0.00%</span>
+            </div>
+            <div class="w-full bg-black/40 h-1.5 rounded-full overflow-hidden border border-gray-800">
+                <div class="bg-gradient-to-r from-gray-400 to-white h-full w-[0%]"></div>
+            </div>
+            <div class="flex justify-between items-center text-[10px] text-gray-400 font-bold uppercase">
+                <span>VIP Progression: Elite Chrome</span>
+                <a href="vip.html" class="text-amber-500 font-cyber">Lounge Metrics</a>
+            </div>
+        </div>
 
-                <div class="grid grid-cols-2 gap-2 text-xs font-bold border-t border-gray-900 pt-2.5">
-                    <button id="tab-manual" class="bg-blue-600/20 border border-blue-500/40 text-white p-2 rounded-lg" onclick="toggleSelectionTabs('manual')">Manual</button>
-                    <button id="tab-auto" class="bg-[#212c36] border border-gray-800 text-gray-400 p-2 rounded-lg" onclick="toggleSelectionTabs('auto')">Auto Mode</button>
-                </div>
+        <div class="grid grid-cols-2 gap-3">
+            <div class="stake-bg-inner border border-gray-900 rounded-xl p-3 h-28 overflow-hidden relative">
+                <span class="text-[9px] font-cyber text-gray-500 block border-b border-gray-900 pb-1 mb-1 uppercase font-black tracking-wider">⚡ Live Active Bets</span>
+                <div id="live-bets-ticker" class="flex flex-col gap-1 text-[10px] font-mono text-gray-400"></div>
+            </div>
+            <div class="stake-bg-inner border border-gray-900 rounded-xl p-3 h-28 overflow-hidden relative">
+                <span class="text-[9px] font-cyber text-emerald-500 block border-b border-gray-900 pb-1 mb-1 uppercase font-black tracking-wider">💎 Live Payouts</span>
+                <div id="live-payouts-ticker" class="flex flex-col gap-1 text-[10px] font-mono text-emerald-400 font-bold"></div>
+            </div>
+        </div>
 
-                <div id="autobet-options-panel" class="hidden flex justify-between items-center border-t border-gray-900 pt-2 font-mono text-xs text-gray-400">
-                    <span>Number of Bets Execution Length:</span>
-                    <span class="text-white text-base font-bold cursor-pointer hover:text-blue-400" onclick="injectInfinityLoopSymbol()">&infin; (Infinite Loop)</span>
-                </div>
+        <!-- 🚨 ADSTERRA PROGRAMMATIC REVENUE ACCELERATOR SLOT PLACEMENT #1 -->
+        <div id="adsterra-lobby-banner" class="w-full bg-[#0f1519] border border-gray-900 rounded-xl h-16 flex items-center justify-center text-center relative overflow-hidden">
+            <span class="text-[10px] font-mono text-gray-600 uppercase tracking-widest">Adsterra Dynamic Revenue Loop Stream Placeholder</span>
+        </div>
 
-                <!-- UTILITY POPUPS GRIDS OVERLAYS BUTTONS (⚙️ Settings & 📊 Candles Anchors) -->
-                <div class="flex justify-between items-center border-t border-gray-900 pt-2.5 relative">
-                    <div class="flex items-center gap-3 text-lg text-gray-400">
-                        <button onclick="toggleGearSettingsOverlay()" class="hover:text-white transition">⚙️</button>
-                        <button onclick="toggleCandlesAnalyticsOverlay()" class="hover:text-white transition">📊</button>
-                    </div>
-                    <span class="text-[9px] text-gray-600 font-cyber font-black uppercase tracking-wider">Provably Fair Core Connected</span>
+        <div>
+            <h4 class="text-xs font-black font-cyber uppercase text-gray-400 tracking-wider mb-3 flex items-center gap-1">
+                <span class="w-1.5 h-1.5 bg-white rounded-full"></span> 1antix9 Originals Hub
+            </h4>
+            <div class="grid grid-cols-2 gap-3">
+                <a href="games.html?game=crash" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-red-950/20 to-neutral-900 flex items-center justify-center text-3xl">🛫</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Crash</span><span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 6,491 active</span></div></a>
+                <a href="games.html?game=mines" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-blue-950/20 to-neutral-900 flex items-center justify-center text-3xl">💣</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Mines</span><span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 4,102 active</span></div></a>
+                <a href="games.html?game=chicken" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-amber-950/20 to-neutral-900 flex items-center justify-center text-3xl">🍗</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Chicken</span><span class="text-[9px] text-emerald-400 font-mono font-bold block mt-0.5">&bull; 3,927 active</span></div></a>
+                <a href="games.html?game=dice" class="stake-bg-card luxury-card-border rounded-xl overflow-hidden block bg-[#1a242d]/80"><div class="h-24 bg-gradient-to-b from-purple-950/20 to-neutral-900 flex items-center justify-center text-3xl">🎲</div><div class="p-2 text-center bg-black/20 border-t border-gray-900"><span class="text-xs font-bold font-cyber text-gray-200 block">Dice</span><span class="text-[9px] text-gray-500 font-mono block mt-0.5">&bull; 1,154 playing</span></div></a>
+            </div>
+        </div>
+    </main>
 
-                    <div id="gear-popup-box" class="absolute bottom-10 left-0 bg-[#070b0e] border border-gray-800 w-44 rounded-xl p-3 space-y-2 hidden z-30 font-mono text-[11px] font-black uppercase text-gray-400 shadow-2xl">
-                        <div class="flex flex-col gap-0.5"><span class="text-[9px] text-gray-600">Audio Volume Level</span><input type="range" class="w-full accent-white bg-gray-800 h-1 appearance-none"></div>
-                        <div class="flex justify-between items-center py-0.5 border-b border-gray-900"><span>⚡ Instant Bet Mode</span><input type="checkbox" class="accent-white"></div>
-                        <div class="flex justify-between items-center py-0.5 border-b border-gray-900"><span>✨ Real Animations</span><input type="checkbox" checked class="accent-white"></div>
-                    </div>
-
-                    <div id="candles-popup-box" class="absolute bottom-10 left-6 bg-[#070b0e] border border-gray-800 w-44 rounded-xl p-3 space-y-2 hidden z-30 font-mono text-[11px] uppercase tracking-wide text-gray-400 shadow-2xl">
-                        <div class="flex justify-between items-center text-emerald-400 font-bold"><span>Total Session Profit</span><span id="stat-profit">+$0.00</span></div>
-                        
+    <!-- FLOATING MULTI-ASSET PORTFOLIO DRAWER PANEL OVERLAY -->
+    <div id="portfolio-dropdown-drawer" class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 backdrop-blur-sm hidden">
+        <div class="w-full max-w-sm stake-bg-card luxury-card-border rounded-2xl flex flex-col h-[470px] overflow-hidden">
+            <div class="p-4 border-b border-gray-900 bg-black/40 space-y-2 flex flex-col font-mono text-[11px] font-black tracking-wide text-gray-400">
+                <div class="flex justify-between items-center"><span>[🟢 ALL UNLOCKED BALANCES]:</span><span id="label-unlocked-vol" class="text-white font-bold">$0.00</span></div>
+    
